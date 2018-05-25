@@ -1,0 +1,6 @@
+/target/
+/nb-configuration.xml
+/README.md
+.project
+.classpath
+.settings/
