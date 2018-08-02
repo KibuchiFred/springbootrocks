@@ -53,6 +53,9 @@ public class UserController {
 		return "redirect:/list";
 	}
 
+	
+
+	
 	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
 	public String home(Model model) {
 		return "home";
@@ -61,6 +64,7 @@ public class UserController {
 	@RequestMapping(value = { "/list" }, method = RequestMethod.GET)
 	public String listUsers(ModelMap model) {
 		List<AppUser> users = userService.findAllUsers();
+		
 		model.addAttribute("users", users);
 
 		return "userlist";

@@ -18,12 +18,12 @@
 
 
 <link rel="stylesheet"
-	href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+	href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="/webjars/datatables/1.10.16/css/jquery.dataTables.min.css">
 
 <link rel="stylesheet"
-	href="/webjars/font-awesome/5.0.10/web-fonts-with-css/css/fontawesome-all.css">
+	href="/webjars/font-awesome/5.1.0/css/all.css">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet">
 
 
@@ -83,7 +83,7 @@
 						$('#tableitems').DataTable();
 					});
 </script>
-<script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<a class="navbar-brand" href="#">Spring Boot Rocks</a>

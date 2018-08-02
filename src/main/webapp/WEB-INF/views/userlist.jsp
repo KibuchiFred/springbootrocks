@@ -41,16 +41,16 @@
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<button class="btn btn-sm btn-primary viewBtn"
 									data-toggle="modal" data-target="#viewModal">
-									<span class="fa fa-id-card"></span>
+									<span class="far fa-id-card"></span>
 								</button>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-user-${user.username}' />"
-									class="btn btn-warning btn-sm"><span class="fa fa-edit"></span></a>
+									class="btn btn-warning btn-sm"><span class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
 								<a href="<c:url value='/delete-user-${user.username}' />"
 									class="btn btn-danger btn-sm delBtn"><span
-									class="fa fa-trash"></span></a>
+									class="fas fa-trash-alt"></span></a>
 							</sec:authorize></td>
 					</tr>
 				</c:forEach>
