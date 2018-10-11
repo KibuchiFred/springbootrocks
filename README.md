@@ -29,7 +29,7 @@ UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 
 Spring boot and hibernate based Case Management Solution (Purely on DB Layer)
 
-Later on integrate the solution with Content Mangement Repositories.
+Later on integrate the solution with Content Mangement Repositories
 
 
 # Technologies Used (as on Oct 10, 2018):
