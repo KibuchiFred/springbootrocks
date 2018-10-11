@@ -25,24 +25,28 @@ Form Validations
 UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 
 
+# The Goal ( - Planning in process)
+
+Spring boot based Case Management Solution
+(Purely on DB Layer)
 
 
-# Technologies Used (as on May 05, 2018):
+# Technologies Used (as on Oct 10, 2018):
 
-Spring Boot - 2.0.2
+Spring Boot - 2.0.5
 
 Spring Data JPA 2.0.x
 
 Spring web/security 5.0.x
 
-Hibernate 5.2.17
+Hibernate 5.2.xx
 
 # For UI: 
 
-Bootstrap 4 
+Bootstrap 4.1 
 
-Jquery 3 
+Jquery 3.3.x 
 
-Fontawesome 5 
+Fontawesome 5.x 
 
 Datatable (used for table content sorting, type-to-search and pagination)
