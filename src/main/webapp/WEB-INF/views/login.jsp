@@ -3,12 +3,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
-				<form method="POST" action="${contextPath}/login"
-					class="form-control">
-					<div class="card-header bg-default text-primary">
-<!-- 				<div style="text-align: center"><h1>Login</h1></div> -->
-				<h2>Login</h2>
-			</div>
+				<form:form method="POST" action="${contextPath}/login"
+					class="form-signin">
+					<div style="text-align: left"
+						class="card-header bg-default text-primary  p-0">
+						<!-- 				<div style="text-align: center"><h1>Login</h1></div> -->
+						<h2>Login</h2>
+					</div>
 					<c:if test="${param.error != null}">
 						<div class="alert alert-danger">Invalid username and
 							password.</div>
@@ -50,10 +51,10 @@
 								Here</a>
 						</div>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
-		<br>
+
 		<%@include file="../fragments/jumbotron.jsp"%>
 	</div>
 	<%@include file="../fragments/footer.jsp"%>

@@ -47,8 +47,9 @@
 	<div class="container">
 		<div class="card-header bg-info text-white p-0">
 			<h4>
-				Welcome <strong style="color: red;">${pageContext.request.userPrincipal.name}</strong> !! - Spring Boot
-				based <strong style="color: blue;">Case Management</strong> Demo
+				Welcome <strong style="color: red;">${pageContext.request.userPrincipal.name}</strong>
+				!! - Spring Boot based <strong style="color: blue;">Case
+					Management</strong> Demo
 			</h4>
 			<%--   <h6><a href="${contextPath}/logout"><p style="text-align:center">Logout</a></p></h6> --%>
 		</div>

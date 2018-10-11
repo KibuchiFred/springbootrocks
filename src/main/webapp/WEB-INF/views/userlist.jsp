@@ -87,7 +87,8 @@
 				<!-- 					<button type="button" class="btn btn-primary">Save changes</button> -->
 				<!-- 				</div> -->
 				<button type="button" class="btn btn-info" data-dismiss="modal">
-						<span class="fa fa-times"> Close</span></button>
+					<span class="fa fa-times"> Close</span>
+				</button>
 			</div>
 		</div>
 	</div>

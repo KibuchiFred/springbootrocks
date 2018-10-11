@@ -18,18 +18,17 @@
 
 
 <link rel="stylesheet"
-	href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css">
+	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="/webjars/datatables/1.10.16/css/jquery.dataTables.min.css">
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
 
-<link rel="stylesheet"
-	href="/webjars/font-awesome/5.1.0/css/all.css">
+<link rel="stylesheet" href="/webjars/font-awesome/5.3.1/css/all.css">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet">
 
 
-<script src="/webjars/popper.js/1.12.9-1/popper.min.js/"></script>
+<script src="/webjars/popper.js/1.14.3/popper.min.js/"></script>
 <script src="/webjars/jquery/3.3.1-1/jquery.min.js/"></script>
-<script src="/webjars/datatables/1.10.16/js/jquery.dataTables.min.js/"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js/"></script>
 
 <script type="text/javascript">
 	$(document)
@@ -83,7 +82,7 @@
 						$('#tableitems').DataTable();
 					});
 </script>
-<script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<a class="navbar-brand" href="#">Spring Boot Rocks</a>
@@ -94,8 +93,8 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
-<!-- 				<li class="nav-item active"><a class="nav-link" -->
-<!-- 					href="/registration">Register</a></li> -->
+				<!-- 				<li class="nav-item active"><a class="nav-link" -->
+				<!-- 					href="/registration">Register</a></li> -->
 				<sec:authorize
 					access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 					<li class="nav-item active"><a class="nav-link" href="/home">Home
@@ -125,9 +124,9 @@
 						</div></li>
 					<li class="nav-item active"><a class="nav-link active"
 						href="/list">Manage Users</a></li>
-				
 
-				<!--<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>	</li> -->
+
+					<!--<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>	</li> -->
 			</ul>
 
 
@@ -172,12 +171,12 @@
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control form-control-sm mr-sm-2" type="text"
 					placeholder="Search" aria-label="Search">
-				<button class="btn  btn-sm btn-success my-2 my-sm-0"
-					type="submit">Search</button>
+				<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 			<a href="${contextPath}/logout" class="btn btn-danger btn-sm"
 				role="button" aria-pressed="true"><i class="fas fa-sign-out-alt"></i>
-				Logout</a></sec:authorize>
+				Logout</a>
+			</sec:authorize>
 		</div>
 	</nav>
 </header>
