@@ -27,8 +27,8 @@ UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 
 # The Goal ( - Planning in process)
 
-Spring boot based Case Management Solution
-(Purely on DB Layer)
+Spring boot based Case Management Solution - Purely on DB Layer
+Later on integrate the solution with Content Mangement Repositories.
 
 
 # Technologies Used (as on Oct 10, 2018):
@@ -43,7 +43,7 @@ Hibernate 5.2.xx
 
 # For UI: 
 
-Bootstrap 4.1 
+Bootstrap 4.x 
 
 Jquery 3.3.x 
 
