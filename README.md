@@ -28,6 +28,7 @@ UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 # The Goal ( - Planning in process)
 
 Spring boot based Case Management Solution - Purely on DB Layer
+
 Later on integrate the solution with Content Mangement Repositories.
 
 
