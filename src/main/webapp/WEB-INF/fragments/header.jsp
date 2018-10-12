@@ -85,7 +85,7 @@
 <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="#">Spring Boot Rocks</a>
+		<a class="navbar-brand" href="#">SPRING ENTERPRISE</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarCollapse" aria-controls="navbarCollapse"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -131,7 +131,7 @@
 
 
 			<div class="btn-group">
-				<button type="button" class="btn btn-info dropdown-toggle btn-sm"
+				<button type="button" class="btn btn-outline-info dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Actions1</button>
 				<div class="dropdown-menu">
@@ -156,7 +156,7 @@
 			</div>&nbsp&nbsp -->
 
 			<div class="btn-group">
-				<button type="button" class="btn btn-warning dropdown-toggle btn-sm"
+				<button type="button" class="btn btn-outline-warning dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Actions2</button>
 				<div class="dropdown-menu">
@@ -171,7 +171,7 @@
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control form-control-sm mr-sm-2" type="text"
 					placeholder="Search" aria-label="Search">
-				<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn  btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 			<a href="${contextPath}/logout" class="btn btn-danger btn-sm"
 				role="button" aria-pressed="true"><i class="fas fa-sign-out-alt"></i>

@@ -39,17 +39,17 @@
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
-								<button class="btn btn-sm btn-primary viewBtn"
+								<button class="btn btn-sm btn-outline-primary viewBtn"
 									data-toggle="modal" data-target="#viewModal">
 									<span class="far fa-id-card"></span>
 								</button>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-user-${user.username}' />"
-									class="btn btn-warning btn-sm"><span class="far fa-edit"></span></a>
+									class="btn btn-outline-warning btn-sm"><span class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
 								<a href="<c:url value='/delete-user-${user.username}' />"
-									class="btn btn-danger btn-sm delBtn"><span
+									class="btn btn-outline-danger btn-sm delBtn"><span
 									class="fas fa-trash-alt"></span></a>
 							</sec:authorize></td>
 					</tr>
