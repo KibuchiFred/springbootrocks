@@ -31,6 +31,28 @@ series varchar(64) primary key,
 token varchar(64) not null,
 last_used timestamp not null)ENGINE=InnoDB;
 
+create table app_agency(
+id INT NOT NULL AUTO_INCREMENT,
+agencyname VARCHAR(150) NOT NULL,
+agencylocation VARCHAR(150) NOT NULL,
+agencyaddress VARCHAR(150) NOT NULL,
+agencyheadname VARCHAR(150) NOT NULL,
+agencyheademail VARCHAR(150) NOT NULL,
+PRIMARY KEY (id),
+UNIQUE (agencyname)) ENGINE=InnoDB;
+
+create table app_programarea(
+id BIGINT NOT NULL AUTO_INCREMENT,
+programareaname VARCHAR(150) NOT NULL,
+programarealocation VARCHAR(150) NOT NULL,
+programareaaddress VARCHAR(150) NOT NULL,
+programareaheadname VARCHAR(150) NOT NULL,
+programareaheademail VARCHAR(150) NOT NULL,
+programareaagencyid INT NOT NULL,
+PRIMARY KEY (id),
+UNIQUE (programareaname)) ENGINE=InnoDB;
+
+
 -- CREATE TABLE file_storage(
 -- id BIGINT NOT NULL AUTO_INCREMENT,
 -- user_id BIGINT NOT NULL,
@@ -44,7 +66,8 @@ last_used timestamp not null)ENGINE=InnoDB;
 
 
 ALTER TABLE app_user_role ADD CONSTRAINT FK_AURUSERID FOREIGN KEY (userid) REFERENCES app_user (id);
-ALTER TABLE app_user_role ADD CONSTRAINT FK_AURROLEID FOREIGN KEY (roleid) REFERENCES app_role (id);  
+ALTER TABLE app_user_role ADD CONSTRAINT FK_AURROLEID FOREIGN KEY (roleid) REFERENCES app_role (id); 
+ALTER TABLE app_programarea ADD CONSTRAINT FK_APAAGENCYID FOREIGN KEY (programareaagencyid) REFERENCES app_agency (id);
 
 INSERT INTO `springbootrocks`.`app_user` (`username`, `password`, `useremail`, `userfirstname`, `userlastname`, `useraddress`) VALUES ('admin@admin', '$2a$10$EVfGJ5O6YLQs5Jj5ZOAKGuZ/2sLqXkNLw8j.MotNnYgHa1h2qUyIW', 'admin@admin', 'admin@admin', 'admin@admin', 'admin@admin');   
 INSERT INTO `springbootrocks`.`app_user` (`username`, `password`, `useremail`, `userfirstname`, `userlastname`, `useraddress`) VALUES ('admin1@admin1', '$2a$10$EVfGJ5O6YLQs5Jj5ZOAKGuZ/2sLqXkNLw8j.MotNnYgHa1h2qUyIW', 'admin1@admin1', 'admin1@admin1', 'admin1@admin1', 'admin1@admin1');

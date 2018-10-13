@@ -100,6 +100,7 @@
 					<li class="nav-item active"><a class="nav-link" href="/home">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
+					
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -122,8 +123,10 @@
 								class="dropdown-item" href="#"> Last quarter</a> <a
 								class="dropdown-item" href="#"> Year-end report</a>
 						</div></li>
-					<li class="nav-item active"><a class="nav-link active"
-						href="/list">Manage Users</a></li>
+
+					
+<!-- 					<li class="nav-item active"><a class="nav-link active" -->
+<!-- 						href="/userlist">Manage Users</a></li> -->
 
 
 					<!--<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>	</li> -->
@@ -131,49 +134,41 @@
 
 
 			<div class="btn-group">
-				<button type="button" class="btn btn-outline-info dropdown-toggle btn-sm"
+				<button type="button"
+					class="btn btn-danger dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Actions1</button>
+					Super Admin Actions</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Action 1</a> <a
-						class="dropdown-item" href="#">Another action 1</a> <a
-						class="dropdown-item" href="#">Something else here 1</a>
+					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
+						class="dropdown-item" href="/agencylist">Manage Agencies</a> <a
+						class="dropdown-item" href="#">More Actions To Go</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Separated link 1</a>
+					<a class="dropdown-item" href="#">And Some More</a>
 				</div>
 			</div>
-			<!--  <div class="btn-group">
-				<button type="button" class="btn btn-warning dropdown-toggle"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Action x</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Action x</a> <a
-						class="dropdown-item" href="#">Another action x</a> <a
-						class="dropdown-item" href="#">Something else here x</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Separated link x</a>
-				</div>
-			</div>&nbsp&nbsp -->
+
 
 			<div class="btn-group">
-				<button type="button" class="btn btn-outline-warning dropdown-toggle btn-sm"
+				<button type="button"
+					class="btn btn-info dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Actions2</button>
+					Program Area Admin Actions</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Action 2</a> <a
-						class="dropdown-item" href="#">Another action 2</a> <a
-						class="dropdown-item" href="#">Something else here 2</a>
+					<a class="dropdown-item" href="#">Manage Users</a> <a
+						class="dropdown-item" href="#">Assign Roles</a> <a
+						class="dropdown-item" href="#">More Actions To Go</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Separated link 2</a>
+					<a class="dropdown-item" href="#">And Some More</a>
 				</div>
 			</div>
 
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control form-control-sm mr-sm-2" type="text"
 					placeholder="Search" aria-label="Search">
-				<button class="btn  btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn  btn-sm btn-outline-success my-2 my-sm-0"
+					type="submit">Search</button>
 			</form>
-			<a href="${contextPath}/logout" class="btn btn-danger btn-sm"
+			<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
 				role="button" aria-pressed="true"><i class="fas fa-sign-out-alt"></i>
 				Logout</a>
 			</sec:authorize>

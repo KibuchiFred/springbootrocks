@@ -50,18 +50,18 @@ public class UserController {
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String root(Model model) {
-		return "redirect:/list";
+		return "redirect:userlist";
 	}
 
 	
 
 	
-	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "home" }, method = RequestMethod.GET)
 	public String home(Model model) {
 		return "home";
 	}
 
-	@RequestMapping(value = { "/list" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "userlist" }, method = RequestMethod.GET)
 	public String listUsers(ModelMap model) {
 		List<AppUser> users = userService.findAllUsers();
 		
@@ -70,14 +70,14 @@ public class UserController {
 		return "userlist";
 	}
 
-	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	@RequestMapping(value = "registration", method = RequestMethod.GET)
 	public String registration(Model model) {
 		model.addAttribute("userForm", new AppUser());
 
 		return "userregistration";
 	}
 
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+	@RequestMapping(value = "registration", method = RequestMethod.POST)
 	public String registration(@ModelAttribute("userForm") AppUser userForm, BindingResult bindingResult, Model model) {
 		useraddValidator.validate(userForm, bindingResult);
 
@@ -92,14 +92,14 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = { "/edit-user-{username}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "edit-user-{username}" }, method = RequestMethod.GET)
 	public String editUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
 		return "useredit";
 	}
 
-	@RequestMapping(value = { "/edit-user-{username}" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "edit-user-{username}" }, method = RequestMethod.POST)
 	public String updateUser(@ModelAttribute("userForm") @Valid AppUser userForm, BindingResult bindingResult,
 			Model model, @PathVariable String username) {
 		usereditValidator.validate(userForm, bindingResult);
@@ -114,7 +114,7 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value = { "/view-user-{username}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "view-user-{username}" }, method = RequestMethod.GET)
 	public String viewUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
@@ -124,10 +124,10 @@ public class UserController {
 	
 	
 
-	@RequestMapping(value = { "/delete-user-{username}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "delete-user-{username}" }, method = RequestMethod.GET)
 	public String deleteUser(@PathVariable String username) {
 		userService.deleteUserByUsername(username);
-		return "redirect:/list";
+		return "redirect:userlist";
 	}
 
 	@ModelAttribute("roles")
@@ -135,7 +135,7 @@ public class UserController {
 		return (List<AppRole>) roleRepo.findAll();
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		if (error != null)
 			model.addAttribute("error", "Your username and password is invalid.");
@@ -146,7 +146,7 @@ public class UserController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {
@@ -154,10 +154,10 @@ public class UserController {
 
 			SecurityContextHolder.getContext().setAuthentication(null);
 		}
-		return "redirect:/login?logout";
+		return "redirect:login?logout";
 	}
 	
-	 @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
+	 @RequestMapping(value = "Access_Denied", method = RequestMethod.GET)
 	    public String accessDeniedPage(ModelMap model) {
 	        model.addAttribute("loggedinuser", getPrincipal());
 	        return "useraccessDenied";
