@@ -16,27 +16,27 @@
 			<div class="row">
 				<label class="col-md-3" for="agencyname">Agency Name</label>
 				<div class="col-md-7">
-				<spring:bind path="agencyname">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
-				<c:choose>
-                <c:when test="${edit}">
-							
-							<form:input type="text" path="agencyname" class="form-control"
-								placeholder="Agency Name" autofocus="true"  disabled="true"></form:input>
+					<spring:bind path="agencyname">
+						<div class="form-group ${status.error ? 'has-error' : ''}">
+							<c:choose>
+								<c:when test="${edit}">
+
+									<form:input type="text" path="agencyname" class="form-control"
+										placeholder="Agency Name" autofocus="true" disabled="true"></form:input>
 								</c:when>
-                            <c:otherwise>
-								<form:input type="text" path="agencyname" class="form-control"
-								placeholder="Agency Name" autofocus="true"></form:input>
+								<c:otherwise>
+									<form:input type="text" path="agencyname" class="form-control"
+										placeholder="Agency Name" autofocus="true"></form:input>
 								</c:otherwise>
-                        </c:choose>
-								
-								
+							</c:choose>
+
+
 							<form:errors path="agencyname"></form:errors>
-							</div>
-						</spring:bind>
-						</div>	
-						</div>	
-	
+						</div>
+					</spring:bind>
+				</div>
+			</div>
+
 
 			<div class="row">
 				<label class="col-md-3" for="agencylocation">Agency Location</label>

@@ -94,7 +94,7 @@
 			<button class="btn btn-primary btn-sm" type="submit">
 				<span class="fa fa-check"></span> Submit
 			</button>
-			<a href="<c:url value='/list' />" class="btn btn-success btn-sm"><i
+			<a href="<c:url value='/userlist' />" class="btn btn-success btn-sm"><i
 				class="fas fa-times"></i> Cancel</a>
 		</form:form>
 

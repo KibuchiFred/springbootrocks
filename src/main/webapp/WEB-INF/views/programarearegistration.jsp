@@ -18,20 +18,20 @@
 				<div class="col-md-7">
 					<spring:bind path="programareaname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
-						<c:choose>
-                <c:when test="${edit}">
-							<form:input type="text" path="programareaname"
-								class="form-control" placeholder="Programarea Name"
-								autofocus="true" disabled="true"></form:input>
+							<c:choose>
+								<c:when test="${edit}">
+									<form:input type="text" path="programareaname"
+										class="form-control" placeholder="Programarea Name"
+										autofocus="true" disabled="true"></form:input>
 								</c:when>
-                            <c:otherwise>
-                            <form:input type="text" path="programareaname"
-								class="form-control" placeholder="Programarea Name"
-								autofocus="true"></form:input>
-                            </c:otherwise>
-                        </c:choose>
-                            
-                            
+								<c:otherwise>
+									<form:input type="text" path="programareaname"
+										class="form-control" placeholder="Programarea Name"
+										autofocus="true"></form:input>
+								</c:otherwise>
+							</c:choose>
+
+
 							<form:errors path="programareaname"></form:errors>
 						</div>
 					</spring:bind>

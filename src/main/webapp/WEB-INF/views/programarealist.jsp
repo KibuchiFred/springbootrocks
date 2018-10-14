@@ -63,7 +63,7 @@
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/programarearegistration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add New Programarea</a>
+					Add New Program Area</a>
 			</sec:authorize>
 		</span>
 	</div>

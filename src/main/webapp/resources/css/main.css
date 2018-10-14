@@ -189,22 +189,34 @@ td {
 
 /* highlight active menu */
 #sidebar
+
  
+
 .list-group-item
+
+
 :not
+
  
+
 (
 .collapsed
+
  
+
 )
 {
 background-color
+
+
 :
+
  
+
 #222
+
+
 ;
-
-
 }
 
 /* closed state */
