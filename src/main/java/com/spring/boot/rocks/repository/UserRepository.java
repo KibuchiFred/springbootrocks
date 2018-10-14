@@ -7,7 +7,7 @@ import com.spring.boot.rocks.model.AppUser;
 
 @Repository
 public interface UserRepository extends JpaRepository<AppUser, Long> {
-    AppUser findByUsername(String username);
-   //AppUser findByid(Long id);
-    
+	AppUser findByUsername(String username);
+	// AppUser findByid(Long id);
+
 }

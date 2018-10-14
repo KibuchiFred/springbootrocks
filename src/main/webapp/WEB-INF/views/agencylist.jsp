@@ -13,7 +13,7 @@
 			<!-- 			<thead class="thead-light"> -->
 			<thead>
 				<tr>
-					<th>AgencyID</th>
+					<th>Agency ID</th>
 					<th>Agency Name</th>
 					<th>Agency Location</th>
 					<th>Agency Address</th>
@@ -46,7 +46,8 @@
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-agency-${agency.agencyname}' />"
-									class="btn btn-outline-warning btn-sm"><span class="far fa-edit"></span></a>
+									class="btn btn-outline-warning btn-sm"><span
+									class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
 								<a href="<c:url value='/delete-agency-${agency.agencyname}' />"
 									class="btn btn-outline-danger btn-sm delBtn"><span
@@ -74,8 +75,8 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="removeModalCenterTitle">View Agency
-						Details</h5>
+					<h5 class="modal-title" id="removeModalCenterTitle">View
+						Agency Details</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>

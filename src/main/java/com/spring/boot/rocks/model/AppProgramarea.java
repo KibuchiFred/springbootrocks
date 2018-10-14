@@ -19,139 +19,135 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.ForeignKey;
 
-
 @Entity
 @Table(name = "app_programarea", catalog = "springbootrocks", schema = "")
-@NamedQueries({
-    @NamedQuery(name = "AppProgramarea.findAll", query = "SELECT a FROM AppProgramarea a")})
+@NamedQueries({ @NamedQuery(name = "AppProgramarea.findAll", query = "SELECT a FROM AppProgramarea a") })
 public class AppProgramarea implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Long id;
-    @Basic(optional = false)
-    @Column(name = "programareaname")
-    private String programareaname;
-    @Basic(optional = false)
-    @Column(name = "programarealocation")
-    private String programarealocation;
-    @Basic(optional = false)
-    @Column(name = "programareaaddress")
-    private String programareaaddress;
-    @Basic(optional = false)
-    @Column(name = "programareaheadname")
-    private String programareaheadname;
-    @Basic(optional = false)
-    @Column(name = "programareaheademail")
-    private String programareaheademail;
-    
-    
-    //@JoinColumn(name = "programareaagencyid", referencedColumnName = "id")
-    
-    
-    
-    @ManyToOne(optional = false )
-    @JoinColumn(name="programareaagencyid",foreignKey=@ForeignKey(name="FK_APAAGENCYID"))
-    private AppAgency appAgency;
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "id")
+	private Long id;
+	@Basic(optional = false)
+	@Column(name = "programareaname")
+	private String programareaname;
+	@Basic(optional = false)
+	@Column(name = "programarealocation")
+	private String programarealocation;
+	@Basic(optional = false)
+	@Column(name = "programareaaddress")
+	private String programareaaddress;
+	@Basic(optional = false)
+	@Column(name = "programareaheadname")
+	private String programareaheadname;
+	@Basic(optional = false)
+	@Column(name = "programareaheademail")
+	private String programareaheademail;
 
-    public AppProgramarea() {
-    }
+	// @JoinColumn(name = "programareaagencyid", referencedColumnName = "id")
 
-    public AppProgramarea(Long id) {
-        this.id = id;
-    }
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "programareaagencyid", foreignKey = @ForeignKey(name = "FK_APAAGENCYID"))
+	private AppAgency appAgency;
 
-    public AppProgramarea(Long id, String programareaname, String programarealocation, String programareaaddress, String programareaheadname, String programareaheademail) {
-        this.id = id;
-        this.programareaname = programareaname;
-        this.programarealocation = programarealocation;
-        this.programareaaddress = programareaaddress;
-        this.programareaheadname = programareaheadname;
-        this.programareaheademail = programareaheademail;
-    }
+	public AppProgramarea() {
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public AppProgramarea(Long id) {
+		this.id = id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public AppProgramarea(Long id, String programareaname, String programarealocation, String programareaaddress,
+			String programareaheadname, String programareaheademail) {
+		this.id = id;
+		this.programareaname = programareaname;
+		this.programarealocation = programarealocation;
+		this.programareaaddress = programareaaddress;
+		this.programareaheadname = programareaheadname;
+		this.programareaheademail = programareaheademail;
+	}
 
-    public String getProgramareaname() {
-        return programareaname;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setProgramareaname(String programareaname) {
-        this.programareaname = programareaname;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getProgramarealocation() {
-        return programarealocation;
-    }
+	public String getProgramareaname() {
+		return programareaname;
+	}
 
-    public void setProgramarealocation(String programarealocation) {
-        this.programarealocation = programarealocation;
-    }
+	public void setProgramareaname(String programareaname) {
+		this.programareaname = programareaname;
+	}
 
-    public String getProgramareaaddress() {
-        return programareaaddress;
-    }
+	public String getProgramarealocation() {
+		return programarealocation;
+	}
 
-    public void setProgramareaaddress(String programareaaddress) {
-        this.programareaaddress = programareaaddress;
-    }
+	public void setProgramarealocation(String programarealocation) {
+		this.programarealocation = programarealocation;
+	}
 
-    public String getProgramareaheadname() {
-        return programareaheadname;
-    }
+	public String getProgramareaaddress() {
+		return programareaaddress;
+	}
 
-    public void setProgramareaheadname(String programareaheadname) {
-        this.programareaheadname = programareaheadname;
-    }
+	public void setProgramareaaddress(String programareaaddress) {
+		this.programareaaddress = programareaaddress;
+	}
 
-    public String getProgramareaheademail() {
-        return programareaheademail;
-    }
+	public String getProgramareaheadname() {
+		return programareaheadname;
+	}
 
-    public void setProgramareaheademail(String programareaheademail) {
-        this.programareaheademail = programareaheademail;
-    }
+	public void setProgramareaheadname(String programareaheadname) {
+		this.programareaheadname = programareaheadname;
+	}
 
-    public AppAgency getAppAgency() {
-        return appAgency;
-    }
+	public String getProgramareaheademail() {
+		return programareaheademail;
+	}
 
-    public void setAppAgency(AppAgency appAgency) {
-        this.appAgency = appAgency;
-    }
+	public void setProgramareaheademail(String programareaheademail) {
+		this.programareaheademail = programareaheademail;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+	public AppAgency getAppAgency() {
+		return appAgency;
+	}
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AppProgramarea)) {
-            return false;
-        }
-        AppProgramarea other = (AppProgramarea) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+	public void setAppAgency(AppAgency appAgency) {
+		this.appAgency = appAgency;
+	}
 
-    @Override
-    public String toString() {
-        return "javaapplication1.AppProgramarea[ id=" + id + " ]";
-    }
-    
+	@Override
+	public int hashCode() {
+		int hash = 0;
+		hash += (id != null ? id.hashCode() : 0);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		// TODO: Warning - this method won't work in the case the id fields are not set
+		if (!(object instanceof AppProgramarea)) {
+			return false;
+		}
+		AppProgramarea other = (AppProgramarea) object;
+		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "javaapplication1.AppProgramarea[ id=" + id + " ]";
+	}
+
 }

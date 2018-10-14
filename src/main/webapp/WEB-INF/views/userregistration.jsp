@@ -4,11 +4,13 @@
 
 		<form:form method="POST" modelAttribute="userForm" class="form-signin">
 			<form:input type="hidden" path="id" id="id" />
-<div class="card-header bg-info text-white p-0">
-		<div style="text-align:center">
-			<h4>Create/Add User Account</h4>
-		</div></div><br>
-			
+			<div class="card-header bg-info text-white p-0">
+				<div style="text-align: center">
+					<h4>Create/Add User Account</h4>
+				</div>
+			</div>
+			<br>
+
 			<div class="row">
 				<label class="col-md-2" for="username">User Name</label>
 				<div class="col-md-7">
@@ -42,7 +44,7 @@
 					<spring:bind path="passwordConfirm">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="password" path="passwordConfirm"
-								class="form-control" placeholder="Confirm your password"></form:input>
+								class="form-control" placeholder="Confirm password"></form:input>
 							<form:errors path="passwordConfirm"></form:errors>
 						</div>
 					</spring:bind>
@@ -88,7 +90,7 @@
 					</spring:bind>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<label class="col-md-2" for="useraddress">Address</label>
 				<div class="col-md-7">
@@ -129,4 +131,3 @@
 
 	</div>
 	<%@include file="../fragments/footer.jsp"%>
-

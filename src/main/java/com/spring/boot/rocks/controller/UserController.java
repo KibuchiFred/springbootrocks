@@ -53,9 +53,6 @@ public class UserController {
 		return "redirect:userlist";
 	}
 
-	
-
-	
 	@RequestMapping(value = { "home" }, method = RequestMethod.GET)
 	public String home(Model model) {
 		return "home";
@@ -64,7 +61,7 @@ public class UserController {
 	@RequestMapping(value = { "userlist" }, method = RequestMethod.GET)
 	public String listUsers(ModelMap model) {
 		List<AppUser> users = userService.findAllUsers();
-		
+
 		model.addAttribute("users", users);
 
 		return "userlist";
@@ -112,17 +109,13 @@ public class UserController {
 		model.addAttribute("success", "User " + userForm.getUsername() + " updated successfully");
 		return "success";
 	}
-	
-	
+
 	@RequestMapping(value = { "view-user-{username}" }, method = RequestMethod.GET)
 	public String viewUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
 		return "userview";
 	}
-
-	
-	
 
 	@RequestMapping(value = { "delete-user-{username}" }, method = RequestMethod.GET)
 	public String deleteUser(@PathVariable String username) {
@@ -156,34 +149,32 @@ public class UserController {
 		}
 		return "redirect:login?logout";
 	}
-	
-	 @RequestMapping(value = "Access_Denied", method = RequestMethod.GET)
-	    public String accessDeniedPage(ModelMap model) {
-	        model.addAttribute("loggedinuser", getPrincipal());
-	        return "useraccessDenied";
-	    }
-	 
-	 
-	  private String getPrincipal() {
-	        String userName = null;
-	        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-	        if (principal instanceof UserDetails) {
-	            userName = ((UserDetails) principal).getUsername();
-	        } else {
-	            userName = principal.toString();
-	        }
-	        return userName;
-	    }
+	@RequestMapping(value = "Access_Denied", method = RequestMethod.GET)
+	public String accessDeniedPage(ModelMap model) {
+		model.addAttribute("loggedinuser", getPrincipal());
+		return "useraccessDenied";
+	}
 
-	    public String getTimeStamp() {
-	        TimeZone mytimeZone = TimeZone.getTimeZone("EST");
-	        Calendar calendar = Calendar.getInstance(mytimeZone);
-	        SimpleDateFormat simpleDateFormat
-	                = new SimpleDateFormat("EE MMM dd HH:mm:ss zzz yyyy", Locale.US);
-	        simpleDateFormat.setTimeZone(mytimeZone);
-	        String setTimeStamp = simpleDateFormat.format(calendar.getTime());
-	        return setTimeStamp;
-	    }
+	private String getPrincipal() {
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails) principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		return userName;
+	}
+
+	public String getTimeStamp() {
+		TimeZone mytimeZone = TimeZone.getTimeZone("EST");
+		Calendar calendar = Calendar.getInstance(mytimeZone);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+		simpleDateFormat.setTimeZone(mytimeZone);
+		String setTimeStamp = simpleDateFormat.format(calendar.getTime());
+		return setTimeStamp;
+	}
 
 }

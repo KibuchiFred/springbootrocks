@@ -38,18 +38,17 @@ import com.spring.boot.rocks.validator.AgencyAddValidator;
 public class AgencyController {
 	@Autowired
 	private AgencyService agencyService;
-	
+
 	@Autowired
 	private AgencyAddValidator agencyaddValidator;
 
 	@Autowired
 	private AgencyEditValidator agencyeditValidator;
 
-	
 	@RequestMapping(value = { "agencylist" }, method = RequestMethod.GET)
 	public String listAgencys(ModelMap model) {
 		List<AppAgency> agencys = agencyService.findAllAgencies();
-		
+
 		model.addAttribute("agencies", agencys);
 
 		return "agencylist";
@@ -63,7 +62,8 @@ public class AgencyController {
 	}
 
 	@RequestMapping(value = "agencyregistration", method = RequestMethod.POST)
-	public String registration(@ModelAttribute("agencyForm") AppAgency agencyForm, BindingResult bindingResult, Model model) {
+	public String registration(@ModelAttribute("agencyForm") AppAgency agencyForm, BindingResult bindingResult,
+			Model model) {
 		agencyaddValidator.validate(agencyForm, bindingResult);
 
 		if (bindingResult.hasErrors()) {
@@ -97,8 +97,7 @@ public class AgencyController {
 		model.addAttribute("success", "Agency " + agencyForm.getAgencyname() + " updated successfully");
 		return "success";
 	}
-	
-	
+
 	@RequestMapping(value = { "view-agency-{agencyname}" }, method = RequestMethod.GET)
 	public String viewAgency(@PathVariable String agencyname, Model model) {
 		AppAgency agency = agencyService.findByAgencyname(agencyname);
@@ -106,36 +105,31 @@ public class AgencyController {
 		return "agencyview";
 	}
 
-	
-	
-
 	@RequestMapping(value = { "delete-agency-{agencyname}" }, method = RequestMethod.GET)
 	public String deleteAgency(@PathVariable String agencyname) {
 		agencyService.deleteAgencyByAgencyname(agencyname);
 		return "redirect:agencylist";
 	}
 
-	 
-	  private String getPrincipal() {
-	        String agencyName = null;
-	        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	private String getPrincipal() {
+		String agencyName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-	        if (principal instanceof UserDetails) {
-	            agencyName = ((UserDetails) principal).getUsername();
-	        } else {
-	            agencyName = principal.toString();
-	        }
-	        return agencyName;
-	    }
+		if (principal instanceof UserDetails) {
+			agencyName = ((UserDetails) principal).getUsername();
+		} else {
+			agencyName = principal.toString();
+		}
+		return agencyName;
+	}
 
-	    public String getTimeStamp() {
-	        TimeZone mytimeZone = TimeZone.getTimeZone("EST");
-	        Calendar calendar = Calendar.getInstance(mytimeZone);
-	        SimpleDateFormat simpleDateFormat
-	                = new SimpleDateFormat("EE MMM dd HH:mm:ss zzz yyyy", Locale.US);
-	        simpleDateFormat.setTimeZone(mytimeZone);
-	        String setTimeStamp = simpleDateFormat.format(calendar.getTime());
-	        return setTimeStamp;
-	    }
+	public String getTimeStamp() {
+		TimeZone mytimeZone = TimeZone.getTimeZone("EST");
+		Calendar calendar = Calendar.getInstance(mytimeZone);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EE MMM dd HH:mm:ss zzz yyyy", Locale.US);
+		simpleDateFormat.setTimeZone(mytimeZone);
+		String setTimeStamp = simpleDateFormat.format(calendar.getTime());
+		return setTimeStamp;
+	}
 
 }

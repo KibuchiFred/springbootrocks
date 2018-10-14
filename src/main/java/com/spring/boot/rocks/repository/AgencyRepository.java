@@ -6,11 +6,10 @@ import org.springframework.stereotype.Repository;
 import com.spring.boot.rocks.model.AppAgency;
 import com.spring.boot.rocks.model.AppRole;
 
-
 @Repository
 public interface AgencyRepository extends JpaRepository<AppAgency, Long> {
 	AppAgency findById(Integer id);
+
 	AppAgency findByAgencyname(String agencyname);
-   
-    
+
 }

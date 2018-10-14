@@ -4,12 +4,14 @@
 
 		<form:form method="POST" modelAttribute="userForm" class="form-signin">
 			<form:input type="hidden" path="id" id="id" />
-			
-<div class="card-header bg-info text-white p-0">
-		<div style="text-align:center">
-			<h4>View User Info</h4>
-		</div></div><br>
-			
+
+			<div class="card-header bg-info text-white p-0">
+				<div style="text-align: center">
+					<h4>View User Info</h4>
+				</div>
+			</div>
+			<br>
+
 			<div class="row">
 				<label class="col-md-2" for="username">User Name</label>
 				<div class="col-md-7">
@@ -23,7 +25,7 @@
 				</div>
 			</div>
 
-	
+
 
 			<div class="row">
 				<label class="col-md-2" for="useremail">Email-ID</label>
@@ -63,7 +65,7 @@
 					</spring:bind>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<label class="col-md-2" for="useraddress">Address</label>
 				<div class="col-md-7">
@@ -81,7 +83,7 @@
 				<label class="col-md-2" for="roles">Roles Available</label>
 				<div class="col-md-7">
 					<form:select path="roles" items="${roles}" multiple="true"
-						itemValue="id" itemLabel="name"  disabled="true"
+						itemValue="id" itemLabel="name" disabled="true"
 						class="form-control input-sm input-sm" />
 					<div class="has-error">
 						<form:errors path="roles" class="help-inline" />
@@ -98,4 +100,3 @@
 
 	</div>
 	<%@include file="../fragments/footer.jsp"%>
-

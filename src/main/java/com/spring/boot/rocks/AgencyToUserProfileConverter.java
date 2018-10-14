@@ -6,23 +6,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import com.spring.boot.rocks.model.AppAgency;
 import com.spring.boot.rocks.model.AppRole;
+import com.spring.boot.rocks.service.AgencyService;
 import com.spring.boot.rocks.service.AppRoleService;
 
 @Component
-public class RoleToUserProfileConverter implements Converter<Object, AppRole> {
+public class AgencyToUserProfileConverter implements Converter<Object, AppAgency> {
 
-	static final Logger logger = LoggerFactory.getLogger(RoleToUserProfileConverter.class);
+	static final Logger logger = LoggerFactory.getLogger(AgencyToUserProfileConverter.class);
 
 	@Autowired
-	AppRoleService roleService;
+	AgencyService agencyService;
 
 	@Override
-	public AppRole convert(Object element) {
+	public AppAgency convert(Object element) {
 		Integer id = Integer.parseInt((String) element);
-		AppRole role = roleService.findByid(id);
-		logger.info("Profile : {}", role);
-		return role;
+		AppAgency agency = agencyService.findById(id);
+		logger.info("Profile : {}", agency);
+		return agency;
 	}
 
 }

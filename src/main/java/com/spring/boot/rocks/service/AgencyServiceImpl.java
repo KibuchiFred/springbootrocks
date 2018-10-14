@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class AgencyServiceImpl implements AgencyService {
 	@Autowired
 	private AgencyRepository agencyRepository;
-	
 
 	@Override
 	public void save(AppAgency agency) {
@@ -24,7 +23,8 @@ public class AgencyServiceImpl implements AgencyService {
 		agency.setAgencyheadname(agency.getAgencyheadname());
 		agency.setAgencyheademail(agency.getAgencyheademail());
 		agency.setAgencyaddress(agency.getAgencyaddress());
-		System.out.println("\n%%%%%%%%%%%      Adding New Agency.... " + agency.getAgencyname() + "     %%%%%%%%%%%%%\n");
+		System.out
+				.println("\n%%%%%%%%%%%      Adding New Agency.... " + agency.getAgencyname() + "     %%%%%%%%%%%%%\n");
 		agencyRepository.save(agency);
 	}
 
@@ -34,9 +34,9 @@ public class AgencyServiceImpl implements AgencyService {
 	}
 
 	@Override
-	public AppAgency findByAgencyId(long agencyid) {
-		AppAgency obj = agencyRepository.findById(agencyid).get();
-		return obj;
+	public AppAgency findById(int id) {
+		return agencyRepository.findById(id);
+
 	}
 
 	@Override
@@ -50,14 +50,14 @@ public class AgencyServiceImpl implements AgencyService {
 	public void updateAgency(AppAgency agency) {
 		AppAgency entity = agencyRepository.findById(agency.getId());
 		if (entity != null) {
-			System.out.println("\n%%%%%%%%%%%      Updating Agency.... " + agency.getAgencyname() + "     %%%%%%%%%%%%%\n");
+			System.out.println(
+					"\n%%%%%%%%%%%      Updating Agency.... " + agency.getAgencyname() + "     %%%%%%%%%%%%%\n");
 
 			entity.setAgencyname(agency.getAgencyname());
 			entity.setAgencylocation(agency.getAgencylocation());
 			entity.setAgencyheadname(agency.getAgencyheadname());
 			entity.setAgencyheademail(agency.getAgencyheademail());
 			entity.setAgencyaddress(agency.getAgencyaddress());
-			
 
 		}
 		agencyRepository.save(entity);

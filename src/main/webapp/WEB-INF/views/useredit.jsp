@@ -6,7 +6,7 @@
 			<form:input type="hidden" path="id" id="id" />
 			<div class="card-header bg-info text-white p-0">
 				<div style="text-align: center">
-					<h4>Edit User Info</h4>
+					<h4>Edit/Update User Info</h4>
 				</div>
 			</div>
 			<br>
@@ -45,7 +45,7 @@
 					<spring:bind path="passwordConfirm">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="password" path="passwordConfirm"
-								class="form-control" placeholder="Confirm your password"></form:input>
+								class="form-control" placeholder="Confirm password"></form:input>
 							<form:errors path="passwordConfirm"></form:errors>
 						</div>
 					</spring:bind>

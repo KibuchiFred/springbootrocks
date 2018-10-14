@@ -100,7 +100,7 @@
 					<li class="nav-item active"><a class="nav-link" href="/home">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-					
+
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -124,9 +124,9 @@
 								class="dropdown-item" href="#"> Year-end report</a>
 						</div></li>
 
-					
-<!-- 					<li class="nav-item active"><a class="nav-link active" -->
-<!-- 						href="/userlist">Manage Users</a></li> -->
+
+					<!-- 					<li class="nav-item active"><a class="nav-link active" -->
+					<!-- 						href="/userlist">Manage Users</a></li> -->
 
 
 					<!--<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>	</li> -->
@@ -134,14 +134,14 @@
 
 
 			<div class="btn-group">
-				<button type="button"
-					class="btn btn-danger dropdown-toggle btn-sm"
+				<button type="button" class="btn btn-danger dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Super Admin Actions</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
 						class="dropdown-item" href="/agencylist">Manage Agencies</a> <a
-						class="dropdown-item" href="#">More Actions To Go</a>
+						class="dropdown-item" href="/programarealist">Manage Program
+						Areas</a><a class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">And Some More</a>
 				</div>
@@ -149,14 +149,13 @@
 
 
 			<div class="btn-group">
-				<button type="button"
-					class="btn btn-info dropdown-toggle btn-sm"
+				<button type="button" class="btn btn-info dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Program Area Admin Actions</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="#">Manage Users</a> <a
 						class="dropdown-item" href="#">Assign Roles</a> <a
-						class="dropdown-item" href="#">More Actions To Go</a>
+						class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">And Some More</a>
 				</div>

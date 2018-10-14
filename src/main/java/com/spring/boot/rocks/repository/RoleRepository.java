@@ -6,8 +6,9 @@ import org.springframework.stereotype.Repository;
 import com.spring.boot.rocks.model.AppRole;
 
 @Repository
-public interface RoleRepository extends JpaRepository<AppRole, Long>{
-	
+public interface RoleRepository extends JpaRepository<AppRole, Long> {
+
 	AppRole findById(Integer id);
+
 	AppRole findByname(String name);
 }

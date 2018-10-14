@@ -4,7 +4,7 @@
 	<div class="container-fluid ">
 		<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
-				<h4>Manage Users</h4>
+				<h4>Manage Program Areas</h4>
 			</div>
 		</div>
 		<br>
@@ -13,12 +13,12 @@
 			<!-- 			<thead class="thead-light"> -->
 			<thead>
 				<tr>
-					<th>Id</th>
-					<th>UserID</th>
-					<th>Email-Id</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Address</th>
+					<th>Programarea ID</th>
+					<th>Programarea Name</th>
+					<th>Programarea Location</th>
+					<th>Programarea Address</th>
+					<th>Programarea-Head Name</th>
+					<th>Programarea-Head EmailID</th>
 
 					<th><sec:authorize
 							access="hasAuthority('ADMIN') or hasAuthority('DBA')">
@@ -28,14 +28,14 @@
 			</thead>
 
 			<tbody>
-				<c:forEach items="${users}" var="user">
+				<c:forEach items="${programareas}" var="programarea">
 					<tr>
-						<td>${user.id}</td>
-						<td>${user.username}</td>
-						<td>${user.useremail}</td>
-						<td>${user.userfirstname}</td>
-						<td>${user.userlastname}</td>
-						<td>${user.useraddress}</td>
+						<td>${programarea.id}</td>
+						<td>${programarea.programareaname}</td>
+						<td>${programarea.programarealocation}</td>
+						<td>${programarea.programareaaddress}</td>
+						<td>${programarea.programareaheadname}</td>
+						<td>${programarea.programareaheademail}</td>
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
@@ -45,11 +45,13 @@
 								</button>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
-								<a href="<c:url value='/edit-user-${user.username}' />"
+								<a
+									href="<c:url value='/edit-programarea-${programarea.programareaname}' />"
 									class="btn btn-outline-warning btn-sm"><span
 									class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
-								<a href="<c:url value='/delete-user-${user.username}' />"
+								<a
+									href="<c:url value='/delete-programarea-${programarea.programareaname}' />"
 									class="btn btn-outline-danger btn-sm delBtn"><span
 									class="fas fa-trash-alt"></span></a>
 							</sec:authorize></td>
@@ -59,24 +61,24 @@
 		</table>
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
-				<a href="<c:url value='/registration' />"
+				<a href="<c:url value='/programarearegistration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add New User</a>
+					Add New Programarea</a>
 			</sec:authorize>
 		</span>
 	</div>
 
 
 
-	<!-- #Modal to view user details -->
+	<!-- #Modal to view programarea details -->
 	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
 		aria-labelledby="viewModalLabel" aria-hidden="true">
 
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="removeModalCenterTitle">View User
-						Details</h5>
+					<h5 class="modal-title" id="removeModalCenterTitle">View
+						Programarea Details</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -97,7 +99,7 @@
 
 
 
-	<!-- #Modal for removing users -->
+	<!-- #Modal for removing programareas -->
 	<div class="modal fade" id="removeModalCenter" tabindex="-1"
 		role="dialog" aria-labelledby="removeModalCenterTitle"
 		aria-hidden="true">
@@ -113,7 +115,7 @@
 				</div>
 				<div class="modal-body">
 					<p class="alert alert-danger">Are you sure you want to delete
-						this User?</p>
+						this Programarea?</p>
 				</div>
 				<div class="modal-footer">
 					<a href="" class="btn btn-danger" id="delRef"><span

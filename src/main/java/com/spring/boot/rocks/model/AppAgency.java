@@ -19,133 +19,132 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "app_agency", catalog = "springbootrocks", schema = "")
-@NamedQueries({
-    @NamedQuery(name = "AppAgency.findAll", query = "SELECT a FROM AppAgency a")})
+@NamedQueries({ @NamedQuery(name = "AppAgency.findAll", query = "SELECT a FROM AppAgency a") })
 public class AppAgency implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
-    @Basic(optional = false)
-    @Column(name = "agencyname")
-    private String agencyname;
-    @Basic(optional = false)
-    @Column(name = "agencylocation")
-    private String agencylocation;
-    @Basic(optional = false)
-    @Column(name = "agencyaddress")
-    private String agencyaddress;
-    @Basic(optional = false)
-    @Column(name = "agencyheadname")
-    private String agencyheadname;
-    @Basic(optional = false)
-    @Column(name = "agencyheademail")
-    private String agencyheademail;
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "appAgency")
-    private Collection<AppProgramarea> appProgramareaCollection;
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "id")
+	private Integer id;
+	@Basic(optional = false)
+	@Column(name = "agencyname")
+	private String agencyname;
+	@Basic(optional = false)
+	@Column(name = "agencylocation")
+	private String agencylocation;
+	@Basic(optional = false)
+	@Column(name = "agencyaddress")
+	private String agencyaddress;
+	@Basic(optional = false)
+	@Column(name = "agencyheadname")
+	private String agencyheadname;
+	@Basic(optional = false)
+	@Column(name = "agencyheademail")
+	private String agencyheademail;
 
-    public AppAgency() {
-    }
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "appAgency")
+	private Collection<AppProgramarea> appProgramareaCollection;
 
-    public AppAgency(Integer id) {
-        this.id = id;
-    }
+	public AppAgency() {
+	}
 
-    public AppAgency(Integer id, String agencyname, String agencylocation, String agencyaddress, String agencyheadname, String agencyheademail) {
-        this.id = id;
-        this.agencyname = agencyname;
-        this.agencylocation = agencylocation;
-        this.agencyaddress = agencyaddress;
-        this.agencyheadname = agencyheadname;
-        this.agencyheademail = agencyheademail;
-    }
+	public AppAgency(Integer id) {
+		this.id = id;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public AppAgency(Integer id, String agencyname, String agencylocation, String agencyaddress, String agencyheadname,
+			String agencyheademail) {
+		this.id = id;
+		this.agencyname = agencyname;
+		this.agencylocation = agencylocation;
+		this.agencyaddress = agencyaddress;
+		this.agencyheadname = agencyheadname;
+		this.agencyheademail = agencyheademail;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getAgencyname() {
-        return agencyname;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setAgencyname(String agencyname) {
-        this.agencyname = agencyname;
-    }
+	public String getAgencyname() {
+		return agencyname;
+	}
 
-    public String getAgencylocation() {
-        return agencylocation;
-    }
+	public void setAgencyname(String agencyname) {
+		this.agencyname = agencyname;
+	}
 
-    public void setAgencylocation(String agencylocation) {
-        this.agencylocation = agencylocation;
-    }
+	public String getAgencylocation() {
+		return agencylocation;
+	}
 
-    public String getAgencyaddress() {
-        return agencyaddress;
-    }
+	public void setAgencylocation(String agencylocation) {
+		this.agencylocation = agencylocation;
+	}
 
-    public void setAgencyaddress(String agencyaddress) {
-        this.agencyaddress = agencyaddress;
-    }
+	public String getAgencyaddress() {
+		return agencyaddress;
+	}
 
-    public String getAgencyheadname() {
-        return agencyheadname;
-    }
+	public void setAgencyaddress(String agencyaddress) {
+		this.agencyaddress = agencyaddress;
+	}
 
-    public void setAgencyheadname(String agencyheadname) {
-        this.agencyheadname = agencyheadname;
-    }
+	public String getAgencyheadname() {
+		return agencyheadname;
+	}
 
-    public String getAgencyheademail() {
-        return agencyheademail;
-    }
+	public void setAgencyheadname(String agencyheadname) {
+		this.agencyheadname = agencyheadname;
+	}
 
-    public void setAgencyheademail(String agencyheademail) {
-        this.agencyheademail = agencyheademail;
-    }
+	public String getAgencyheademail() {
+		return agencyheademail;
+	}
 
-    public Collection<AppProgramarea> getAppProgramareaCollection() {
-        return appProgramareaCollection;
-    }
+	public void setAgencyheademail(String agencyheademail) {
+		this.agencyheademail = agencyheademail;
+	}
 
-    public void setAppProgramareaCollection(Collection<AppProgramarea> appProgramareaCollection) {
-        this.appProgramareaCollection = appProgramareaCollection;
-    }
+	public Collection<AppProgramarea> getAppProgramareaCollection() {
+		return appProgramareaCollection;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+	public void setAppProgramareaCollection(Collection<AppProgramarea> appProgramareaCollection) {
+		this.appProgramareaCollection = appProgramareaCollection;
+	}
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof AppAgency)) {
-            return false;
-        }
-        AppAgency other = (AppAgency) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+	@Override
+	public int hashCode() {
+		int hash = 0;
+		hash += (id != null ? id.hashCode() : 0);
+		return hash;
+	}
 
-    @Override
-    public String toString() {
-        return "javaapplication1.AppAgency[ id=" + id + " ]";
-    }
-    
+	@Override
+	public boolean equals(Object object) {
+		// TODO: Warning - this method won't work in the case the id fields are not set
+		if (!(object instanceof AppAgency)) {
+			return false;
+		}
+		AppAgency other = (AppAgency) object;
+		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "javaapplication1.AppAgency[ id=" + id + " ]";
+	}
+
 }

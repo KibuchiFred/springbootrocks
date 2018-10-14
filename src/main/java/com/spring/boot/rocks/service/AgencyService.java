@@ -7,7 +7,7 @@ import com.spring.boot.rocks.model.AppAgency;
 public interface AgencyService {
 	AppAgency findByAgencyname(String agencyname);
 
-	AppAgency findByAgencyId(long agencyid);
+	AppAgency findById(int id);
 
 	void save(AppAgency agency);
 

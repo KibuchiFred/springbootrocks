@@ -15,14 +15,14 @@
 									authorized for this operation.
 								</span> <span class="floatRight"><a
 									href="<c:url value='/logout' />"
-									class="btn btn-sm btn-warning "><strong>LOGOUT</strong></a></span>
-					
-							<a href="<c:url value='/list' />" class="btn btn-sm btn-success "><strong>Go
-									Back</strong></a>
-					
-						</h4>	</div>
+									class="btn btn-sm btn-warning "><strong>LOGOUT</strong></a></span> <a
+									href="<c:url value='/list' />" class="btn btn-sm btn-success "><strong>Go
+										Back</strong></a>
+
+							</h4>
+						</div>
 						<br>
-					
+
 						<div class="alert alert-info" role="alert">
 							<strong>Heads up!</strong> This alert needs your attention, but
 							it's not super important.
@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-</body>	
+</body>
 
 <%@include file="../fragments/footer.jsp"%>
 
