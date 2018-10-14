@@ -93,7 +93,8 @@ public class UserController {
 	public String editUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
-		return "useredit";
+		model.addAttribute("edit", true);
+		return "userregistration";
 	}
 
 	@RequestMapping(value = { "edit-user-{username}" }, method = RequestMethod.POST)
@@ -101,7 +102,7 @@ public class UserController {
 			Model model, @PathVariable String username) {
 		usereditValidator.validate(userForm, bindingResult);
 		if (bindingResult.hasErrors()) {
-			return "useredit";
+			return "userregistration";
 		}
 
 		userService.updateUser(userForm);

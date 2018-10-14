@@ -92,7 +92,8 @@ public class ProgramAreaController {
 	public String editProgramarea(@PathVariable String programareaname, Model model) {
 		AppProgramarea programarea = programareaService.findByProgramareaname(programareaname);
 		model.addAttribute("programareaForm", programarea);
-		return "programareaedit";
+		model.addAttribute("edit", true);
+		return "programarearegistration";
 	}
 
 	@RequestMapping(value = { "edit-programarea-{programareaname}" }, method = RequestMethod.POST)
@@ -100,7 +101,7 @@ public class ProgramAreaController {
 			BindingResult bindingResult, Model model, @PathVariable String programareaname) {
 		programareaeditValidator.validate(programareaForm, bindingResult);
 		if (bindingResult.hasErrors()) {
-			return "programareaedit";
+			return "programarearegistration";
 		}
 
 		programareaService.updateProgramarea(programareaForm);

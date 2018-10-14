@@ -16,8 +16,16 @@
 				<div class="col-md-7">
 					<spring:bind path="username">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
-							<form:input type="text" path="username" class="form-control"
-								placeholder="Username" autofocus="true"></form:input>
+							<c:choose>
+								<c:when test="${edit}">
+									<form:input type="text" path="username" class="form-control"
+										placeholder="Username" autofocus="true" disabled="true"></form:input>
+								</c:when>
+								<c:otherwise>
+									<form:input type="text" path="username" class="form-control"
+										placeholder="Username" autofocus="true"></form:input>
+								</c:otherwise>
+							</c:choose>
 							<form:errors path="username"></form:errors>
 						</div>
 					</spring:bind>

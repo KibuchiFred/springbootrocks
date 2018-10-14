@@ -81,7 +81,8 @@ public class AgencyController {
 	public String editAgency(@PathVariable String agencyname, Model model) {
 		AppAgency agency = agencyService.findByAgencyname(agencyname);
 		model.addAttribute("agencyForm", agency);
-		return "agencyedit";
+		model.addAttribute("edit", true);
+		return "agencyregistration";
 	}
 
 	@RequestMapping(value = { "edit-agency-{agencyname}" }, method = RequestMethod.POST)
@@ -89,7 +90,7 @@ public class AgencyController {
 			Model model, @PathVariable String agencyname) {
 		agencyeditValidator.validate(agencyForm, bindingResult);
 		if (bindingResult.hasErrors()) {
-			return "agencyedit";
+			return "agencyregistration";
 		}
 
 		agencyService.updateAgency(agencyForm);
