@@ -13,7 +13,7 @@
 			<!-- 			<thead class="thead-light"> -->
 			<thead>
 				<tr>
-					<th>Programarea ID</th>
+					<th>ID</th>
 					<th>Programarea Name</th>
 					<th>Programarea Location</th>
 					<th>Programarea Address</th>

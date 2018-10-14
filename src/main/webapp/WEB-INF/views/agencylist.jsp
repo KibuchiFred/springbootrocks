@@ -13,7 +13,7 @@
 			<!-- 			<thead class="thead-light"> -->
 			<thead>
 				<tr>
-					<th>Agency ID</th>
+					<th>ID</th>
 					<th>Agency Name</th>
 					<th>Agency Location</th>
 					<th>Agency Address</th>
