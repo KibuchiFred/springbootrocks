@@ -7,9 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import com.spring.boot.rocks.model.AppAgency;
-import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.service.AgencyService;
-import com.spring.boot.rocks.service.AppRoleService;
 
 @Component
 public class AgencyToUserProfileConverter implements Converter<Object, AppAgency> {

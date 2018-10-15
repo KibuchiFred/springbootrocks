@@ -30,7 +30,6 @@ import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
 import com.spring.boot.rocks.repository.ProgramareaRepository;
 import com.spring.boot.rocks.repository.RoleRepository;
-import com.spring.boot.rocks.service.AppRoleService;
 import com.spring.boot.rocks.service.UserService;
 import com.spring.boot.rocks.validator.UserEditValidator;
 import com.spring.boot.rocks.validator.UserAddValidator;
@@ -41,9 +40,6 @@ import com.spring.boot.rocks.validator.UserAddValidator;
 public class UserController {
 	@Autowired
 	private UserService userService;
-
-	@Autowired
-	private AppRoleService roleService;
 
 	@Autowired
 	private RoleRepository roleRepo;

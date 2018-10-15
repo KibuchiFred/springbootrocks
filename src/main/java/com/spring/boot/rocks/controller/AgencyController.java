@@ -1,20 +1,9 @@
 package com.spring.boot.rocks.controller;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -25,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppAgency;
-import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.AgencyService;
 import com.spring.boot.rocks.validator.AgencyEditValidator;
 import com.spring.boot.rocks.validator.AgencyAddValidator;
@@ -112,25 +99,6 @@ public class AgencyController {
 		return "redirect:agencylist";
 	}
 
-	private String getPrincipal() {
-		String agencyName = null;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-		if (principal instanceof UserDetails) {
-			agencyName = ((UserDetails) principal).getUsername();
-		} else {
-			agencyName = principal.toString();
-		}
-		return agencyName;
-	}
-
-	public String getTimeStamp() {
-		TimeZone mytimeZone = TimeZone.getTimeZone("EST");
-		Calendar calendar = Calendar.getInstance(mytimeZone);
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EE MMM dd HH:mm:ss zzz yyyy", Locale.US);
-		simpleDateFormat.setTimeZone(mytimeZone);
-		String setTimeStamp = simpleDateFormat.format(calendar.getTime());
-		return setTimeStamp;
-	}
+	
 
 }

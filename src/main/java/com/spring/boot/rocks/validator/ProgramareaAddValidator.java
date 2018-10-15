@@ -19,7 +19,6 @@ public class ProgramareaAddValidator implements Validator {
 		return AppProgramarea.class.equals(aClass);
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public void validate(Object o, Errors errors) {
 		AppProgramarea programarea = (AppProgramarea) o;

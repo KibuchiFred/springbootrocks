@@ -1,9 +1,6 @@
 package com.spring.boot.rocks.validator;
 
 import com.spring.boot.rocks.model.AppAgency;
-import com.spring.boot.rocks.service.AgencyService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -11,8 +8,7 @@ import org.springframework.validation.Validator;
 
 @Component
 public class AgencyEditValidator implements Validator {
-	@Autowired
-	private AgencyService agencyService;
+
 
 	@Override
 	public boolean supports(Class<?> aClass) {

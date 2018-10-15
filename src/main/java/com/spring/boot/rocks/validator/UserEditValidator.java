@@ -2,12 +2,10 @@ package com.spring.boot.rocks.validator;
 
 import com.spring.boot.rocks.model.AppUser;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import com.spring.boot.rocks.service.UserService;
 
 @Component
 public class UserEditValidator implements Validator {

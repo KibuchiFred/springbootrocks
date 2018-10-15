@@ -1,9 +1,6 @@
 package com.spring.boot.rocks.validator;
 
 import com.spring.boot.rocks.model.AppProgramarea;
-import com.spring.boot.rocks.service.ProgramareaService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -11,8 +8,6 @@ import org.springframework.validation.Validator;
 
 @Component
 public class ProgramareaEditValidator implements Validator {
-	@Autowired
-	private ProgramareaService programareaService;
 
 	@Override
 	public boolean supports(Class<?> aClass) {
