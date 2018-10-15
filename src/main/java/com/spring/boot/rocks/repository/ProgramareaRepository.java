@@ -15,7 +15,4 @@ public interface ProgramareaRepository extends JpaRepository<AppProgramarea, Lon
 
 	AppProgramarea findByProgramareaname(String programareaname);
 
-	@Query(value = "SELECT * FROM app_programarea t where t.programareaagencyid = ?0", nativeQuery = true)
-	public Optional<AppProgramarea> findByAgencyID(String programareaagencyid);
-
 }
