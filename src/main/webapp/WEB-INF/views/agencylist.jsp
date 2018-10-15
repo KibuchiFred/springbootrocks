@@ -61,7 +61,7 @@
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/agencyregistration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add New Agency</a>
+					Add Agency</a>
 			</sec:authorize>
 		</span>
 	</div>

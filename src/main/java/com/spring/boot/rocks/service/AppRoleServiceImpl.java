@@ -8,7 +8,7 @@ import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.repository.RoleRepository;
 
 @Service("roleService")
-@Transactional
+@Transactional(timeout = 5)
 public class AppRoleServiceImpl implements AppRoleService {
 
 	@Autowired

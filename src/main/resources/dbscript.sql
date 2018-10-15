@@ -42,7 +42,7 @@ PRIMARY KEY (id),
 UNIQUE (agencyname)) ENGINE=InnoDB;
 
 create table app_programarea(
-id BIGINT NOT NULL AUTO_INCREMENT,
+id INT NOT NULL AUTO_INCREMENT,
 programareaname VARCHAR(150) NOT NULL,
 programarealocation VARCHAR(150) NOT NULL,
 programareaaddress VARCHAR(150) NOT NULL,
@@ -52,6 +52,11 @@ programareaagencyid INT NOT NULL,
 PRIMARY KEY (id),
 UNIQUE (programareaname)) ENGINE=InnoDB;
 
+CREATE TABLE app_user_programarea (
+id BIGINT NOT NULL AUTO_INCREMENT,
+userid BIGINT NOT NULL,
+programareaid INT NOT NULL,
+PRIMARY KEY (id))ENGINE=InnoDB;
 
 -- CREATE TABLE file_storage(
 -- id BIGINT NOT NULL AUTO_INCREMENT,
@@ -67,6 +72,10 @@ UNIQUE (programareaname)) ENGINE=InnoDB;
 
 ALTER TABLE app_user_role ADD CONSTRAINT FK_AURUSERID FOREIGN KEY (userid) REFERENCES app_user (id);
 ALTER TABLE app_user_role ADD CONSTRAINT FK_AURROLEID FOREIGN KEY (roleid) REFERENCES app_role (id); 
+
+ALTER TABLE app_user_programarea ADD CONSTRAINT FK_AUPUSERID FOREIGN KEY (userid) REFERENCES app_user (id);
+ALTER TABLE app_user_programarea ADD CONSTRAINT FK_AUPPPAREAID FOREIGN KEY (programareaid) REFERENCES app_programarea (id);
+
 ALTER TABLE app_programarea ADD CONSTRAINT FK_APAAGENCYID FOREIGN KEY (programareaagencyid) REFERENCES app_agency (id);
 
 INSERT INTO `springbootrocks`.`app_user` (`username`, `password`, `useremail`, `userfirstname`, `userlastname`, `useraddress`) VALUES ('admin@admin', '$2a$10$EVfGJ5O6YLQs5Jj5ZOAKGuZ/2sLqXkNLw8j.MotNnYgHa1h2qUyIW', 'admin@admin', 'admin@admin', 'admin@admin', 'admin@admin');   
@@ -162,4 +171,51 @@ INSERT INTO `springbootrocks`.`app_programarea` (`programareaname`, `programarea
 INSERT INTO `springbootrocks`.`app_programarea` (`programareaname`, `programarealocation`, `programareaaddress`, `programareaheadname`, `programareaheademail`, `programareaagencyid`) VALUES ('Programarea14', 'Programarea14 Location', 'Programarea14 Address', 'Programarea14HeadName', 'Programarea14Head@email.com', '5');
 INSERT INTO `springbootrocks`.`app_programarea` (`programareaname`, `programarealocation`, `programareaaddress`, `programareaheadname`, `programareaheademail`, `programareaagencyid`) VALUES ('Programarea15', 'Programarea15 Location', 'Programarea15 Address', 'Programarea15HeadName', 'Programarea15Head@email.com', '5');
 
-
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('1', '1');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('1', '2');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('1', '3');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('2', '4');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('2', '5');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('2', '6');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('3', '7');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('3', '8');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('3', '9');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('4', '10');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('4', '11');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('4', '12');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('5', '13');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('5', '14');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('5', '15');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('6', '1');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('6', '2');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('6', '3');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('7', '4');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('7', '5');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('7', '6');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('8', '7');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('8', '8');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('8', '9');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('9', '10');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('9', '11');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('9', '12');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('10', '13');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('10', '14');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('10', '15');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('11', '1');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('11', '2');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('11', '3');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('12', '4');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('12', '5');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('12', '6');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('13', '7');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('13', '8');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('13', '9');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('14', '10');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('14', '11');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('14', '12');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('15', '13');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('15', '14');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('15', '15');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('16', '1');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('16', '2');
+INSERT INTO `springbootrocks`.`app_user_programarea` (`userid`, `programareaid`) VALUES ('16', '3');

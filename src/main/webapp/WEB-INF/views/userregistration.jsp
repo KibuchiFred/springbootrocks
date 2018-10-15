@@ -6,7 +6,7 @@
 			<form:input type="hidden" path="id" id="id" />
 			<div class="card-header bg-info text-white p-0">
 				<div style="text-align: center">
-					<h4>Create/Add User Account</h4>
+					<h4>Add / Update User Account</h4>
 				</div>
 			</div>
 			<br>
@@ -124,6 +124,18 @@
 				</div>
 			</div>
 
+
+			<div class="row">
+				<label class="col-md-2" for="programareas">Program Areas Available</label>
+				<div class="col-md-7">
+					<form:select path="programareas" items="${programareas}" multiple="true"
+						itemValue="id" itemLabel="programareaname"
+						class="form-control input-sm input-sm" />
+					<div class="has-error">
+						<form:errors path="programareas" class="help-inline" />
+					</div>
+				</div>
+			</div>
 
 
 

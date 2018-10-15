@@ -7,7 +7,7 @@
 			<form:input type="hidden" path="id" id="id" />
 			<div class="card-header bg-info text-white p-0">
 				<div style="text-align: center">
-					<h4>Add Program Area</h4>
+					<h4>Add / Update Program Area</h4>
 				</div>
 			</div>
 			<br>
@@ -39,12 +39,15 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-3" for="appAgency">Agencies Available</label>
+				<label class="col-md-3" for="appAgency">Associate with Agency</label>
 				<div class="col-md-7">
 					<spring:bind path="programareaname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
-							<form:select path="appAgency" items="${appAgency}" itemValue="id"
-								itemLabel="agencyname" class="form-control input-sm input-sm" />
+							<form:select path="appAgency"  class="form-control input-sm input-sm">
+								<option value="#" disabled = "disabled" selected="selected">--- Select Agency ---</option>
+								<form:options items="${appAgency}"  itemValue="id" itemLabel="agencyname"/>
+								<form:errors path="appAgency" class="help-inline" />
+							</form:select>
 							<div class="has-error">
 								<form:errors path="appAgency" class="help-inline" />
 							</div>
@@ -113,13 +116,6 @@
 					</spring:bind>
 				</div>
 			</div>
-
-
-
-
-
-
-
 
 
 

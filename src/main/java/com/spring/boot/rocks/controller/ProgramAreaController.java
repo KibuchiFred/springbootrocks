@@ -37,7 +37,7 @@ import com.spring.boot.rocks.validator.ProgramareaAddValidator;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("roles")
+@SessionAttributes({ "roles", "appAgency" })
 public class ProgramAreaController {
 	@Autowired
 	private ProgramareaService programareaService;

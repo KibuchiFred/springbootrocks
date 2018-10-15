@@ -19,6 +19,7 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Address</th>
+<!-- 					<th>Roles</th> -->
 
 					<th><sec:authorize
 							access="hasAuthority('ADMIN') or hasAuthority('DBA')">
@@ -36,6 +37,8 @@
 						<td>${user.userfirstname}</td>
 						<td>${user.userlastname}</td>
 						<td>${user.useraddress}</td>
+<%-- 						<td><c:forEach items="${roles}" var="list"> --%>
+<%-- 							-${list.name}-</c:forEach></td> --%>
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
@@ -61,7 +64,7 @@
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/registration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add New User</a>
+					Add User</a>
 			</sec:authorize>
 		</span>
 	</div>

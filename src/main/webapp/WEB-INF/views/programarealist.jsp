@@ -19,6 +19,7 @@
 					<th>Programarea Address</th>
 					<th>Programarea-Head Name</th>
 					<th>Programarea-Head EmailID</th>
+<!-- 					<th>Associated with Agency</th> -->
 
 					<th><sec:authorize
 							access="hasAuthority('ADMIN') or hasAuthority('DBA')">
@@ -36,6 +37,8 @@
 						<td>${programarea.programareaaddress}</td>
 						<td>${programarea.programareaheadname}</td>
 						<td>${programarea.programareaheademail}</td>
+<%-- 						<td><c:forEach items="${appAgency}" var="list"> --%>
+<%-- 							-${list.agencyname}-</c:forEach></td> --%>
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
@@ -63,7 +66,7 @@
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/programarearegistration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add New Program Area</a>
+					Add Program Area</a>
 			</sec:authorize>
 		</span>
 	</div>

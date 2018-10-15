@@ -1,28 +1,101 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.spring.boot.rocks.model;
-
-import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
+import javax.persistence.*;
+
+/**
+ *
+ * @author 502491649
+ */
 @Entity
-@Table(name = "app_user")
+@Table(name = "app_user", catalog = "springbootrocks", schema = "")
+@NamedQueries({ @NamedQuery(name = "AppUser.findAll", query = "SELECT a FROM AppUser a"),
+		@NamedQuery(name = "AppUser.findById", query = "SELECT a FROM AppUser a WHERE a.id = :id"),
+		@NamedQuery(name = "AppUser.findByUsername", query = "SELECT a FROM AppUser a WHERE a.username = :username"),
+		@NamedQuery(name = "AppUser.findByPassword", query = "SELECT a FROM AppUser a WHERE a.password = :password"),
+		@NamedQuery(name = "AppUser.findByUseremail", query = "SELECT a FROM AppUser a WHERE a.useremail = :useremail"),
+		@NamedQuery(name = "AppUser.findByUserfirstname", query = "SELECT a FROM AppUser a WHERE a.userfirstname = :userfirstname"),
+		@NamedQuery(name = "AppUser.findByUserlastname", query = "SELECT a FROM AppUser a WHERE a.userlastname = :userlastname"),
+		@NamedQuery(name = "AppUser.findByUseraddress", query = "SELECT a FROM AppUser a WHERE a.useraddress = :useraddress") })
 public class AppUser implements Serializable {
+
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
+	@Column(name = "id")
 	private Long id;
+	@Basic(optional = false)
+	@Column(name = "username")
 	private String username;
+	@Basic(optional = false)
+	@Column(name = "password")
 	private String password;
 	private String passwordConfirm;
+	@Basic(optional = false)
+	@Column(name = "useremail")
 	private String useremail;
+	@Basic(optional = false)
+	@Column(name = "userfirstname")
 	private String userfirstname;
+	@Basic(optional = false)
+	@Column(name = "userlastname")
 	private String userlastname;
+	@Basic(optional = false)
+	@Column(name = "useraddress")
 	private String useraddress;
+
+	public AppUser() {
+	}
+
+	public AppUser(Long id) {
+		this.id = id;
+	}
+
+	public AppUser(Long id, String username, String password, String useremail, String userfirstname,
+			String userlastname, String useraddress) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.useremail = useremail;
+		this.userfirstname = userfirstname;
+		this.userlastname = userlastname;
+		this.useraddress = useraddress;
+	}
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "app_user_role", joinColumns = @JoinColumn(name = "userid"), inverseJoinColumns = @JoinColumn(name = "roleid"))
 
 	private List<AppRole> roles;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "app_user_programarea", joinColumns = @JoinColumn(name = "userid"), inverseJoinColumns = @JoinColumn(name = "programareaid"))
+
+	private List<AppProgramarea> programareas;
+
+	public List<AppRole> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<AppRole> roles) {
+		this.roles = roles;
+	}
+
+	public List<AppProgramarea> getProgramareas() {
+		return programareas;
+	}
+
+	public void setProgramareas(List<AppProgramarea> programareas) {
+		this.programareas = programareas;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -54,17 +127,6 @@ public class AppUser implements Serializable {
 
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
-	}
-
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "app_user_role", joinColumns = @JoinColumn(name = "userid"), inverseJoinColumns = @JoinColumn(name = "roleid"))
-
-	public List<AppRole> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<AppRole> roles) {
-		this.roles = roles;
 	}
 
 	public String getUseremail() {
@@ -121,7 +183,7 @@ public class AppUser implements Serializable {
 
 	@Override
 	public String toString() {
-		return "com.spring.boot.rocks.model.AppUser[ id=" + id + " ]";
+		return "javaapplication3.AppUser[ id=" + id + " ]";
 	}
 
 }

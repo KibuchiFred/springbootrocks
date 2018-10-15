@@ -19,6 +19,7 @@ public class ProgramareaAddValidator implements Validator {
 		return AppProgramarea.class.equals(aClass);
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public void validate(Object o, Errors errors) {
 		AppProgramarea programarea = (AppProgramarea) o;
@@ -30,7 +31,13 @@ public class ProgramareaAddValidator implements Validator {
 		if (programareaService.findByProgramareaname(programarea.getProgramareaname()) != null) {
 			errors.rejectValue("programareaname", "Duplicate.programareaForm.programareaname");
 		}
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "appAgency", "NotEmpty");
+
+//		if(programarea.getAppAgency()== null){
+//			errors.rejectValue("appAgency", "NoAgencySelected");
+//		   }
+//		
+
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "appAgency", "NoAgencySelected");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "programarealocation", "NotEmpty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "programareaaddress", "NotEmpty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "programareaheadname", "NotEmpty");
