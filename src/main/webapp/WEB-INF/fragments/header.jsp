@@ -136,12 +136,16 @@
 			<div class="btn-group">
 				<button type="button" class="btn btn-danger dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Super Admin Actions</button>
+					Super Admin</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
 						class="dropdown-item" href="/agencylist">Manage Agencies</a> <a
 						class="dropdown-item" href="/programarealist">Manage Program
-						Areas</a><a class="dropdown-item" href="#">More Actions</a>
+						Areas</a>
+						<a
+						class="dropdown-item" href="/casetypelist">Manage Case Types</a>
+						
+						<a class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">And Some More</a>
 				</div>
@@ -151,7 +155,7 @@
 			<div class="btn-group">
 				<button type="button" class="btn btn-info dropdown-toggle btn-sm"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Program Area Admin Actions</button>
+					Program Area Admin</button>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="#">Manage Users</a> <a
 						class="dropdown-item" href="#">Assign Roles</a> <a
@@ -166,8 +170,8 @@
 					placeholder="Search" aria-label="Search">
 				<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
-			<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
-				role="button" aria-pressed="true"><i class="fas fa-sign-out-alt"></i>
+			<a href="${contextPath}/logout" class="btn btn-warning btn-sm" 
+				role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i class="fas fa-sign-out-alt"></i>
 				Logout</a>
 			</sec:authorize>
 		</div>

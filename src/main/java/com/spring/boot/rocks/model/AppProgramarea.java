@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
+import java.util.Collection;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,12 +15,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.ForeignKey;
 
 @Entity
 @Table(name = "app_programarea", catalog = "springbootrocks", schema = "")
-@NamedQueries({ @NamedQuery(name = "AppProgramarea.findAll", query = "SELECT a FROM AppProgramarea a") })
+@NamedQueries({
+    @NamedQuery(name = "AppProgramarea.findAll", query = "SELECT a FROM AppProgramarea a")
+    , @NamedQuery(name = "AppProgramarea.findById", query = "SELECT a FROM AppProgramarea a WHERE a.id = :id")
+    , @NamedQuery(name = "AppProgramarea.findByProgramareaname", query = "SELECT a FROM AppProgramarea a WHERE a.programareaname = :programareaname")
+    , @NamedQuery(name = "AppProgramarea.findByProgramarealocation", query = "SELECT a FROM AppProgramarea a WHERE a.programarealocation = :programarealocation")
+    , @NamedQuery(name = "AppProgramarea.findByProgramareaaddress", query = "SELECT a FROM AppProgramarea a WHERE a.programareaaddress = :programareaaddress")
+    , @NamedQuery(name = "AppProgramarea.findByProgramareaheadname", query = "SELECT a FROM AppProgramarea a WHERE a.programareaheadname = :programareaheadname")
+    , @NamedQuery(name = "AppProgramarea.findByProgramareaheademail", query = "SELECT a FROM AppProgramarea a WHERE a.programareaheademail = :programareaheademail")})
+
 public class AppProgramarea implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -52,6 +60,9 @@ public class AppProgramarea implements Serializable {
 	@JoinColumn(name = "programareaagencyid", foreignKey = @ForeignKey(name = "FK_APAAGENCYID"))
 	private AppAgency appAgency;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "appProgramarea")
+    private Collection<AppCasetype> appCasetypeCollection;
+	
 	public AppProgramarea() {
 	}
 
@@ -123,6 +134,14 @@ public class AppProgramarea implements Serializable {
 
 	public void setAppAgency(AppAgency appAgency) {
 		this.appAgency = appAgency;
+	}
+	
+	public Collection<AppCasetype> getAppCasetypeCollection() {
+		return appCasetypeCollection;
+	}
+
+	public void setAppCasetypeCollection(Collection<AppCasetype> appCasetypeCollection) {
+		this.appCasetypeCollection = appCasetypeCollection;
 	}
 
 	@Override

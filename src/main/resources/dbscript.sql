@@ -58,6 +58,37 @@ userid BIGINT NOT NULL,
 programareaid INT NOT NULL,
 PRIMARY KEY (id))ENGINE=InnoDB;
 
+
+create table app_casetype(
+id INT NOT NULL AUTO_INCREMENT,
+casetypename VARCHAR(150) NOT NULL,
+programareaid INT NOT NULL,
+PRIMARY KEY (id),
+UNIQUE (casetypename)) ENGINE=InnoDB;
+
+
+create table app_caseproperty(
+id INT NOT NULL AUTO_INCREMENT,
+caseproperty1 VARCHAR(150) NOT NULL,
+caseproperty2 VARCHAR(150) NOT NULL,
+caseproperty3 VARCHAR(150) NOT NULL,
+caseproperty4 VARCHAR(150) NOT NULL,
+caseproperty5 VARCHAR(150) NOT NULL,
+casetypeid INT NOT NULL,
+PRIMARY KEY (id)) ENGINE=InnoDB;
+
+create table app_documenttype(
+id INT NOT NULL AUTO_INCREMENT,
+documenttypename VARCHAR(150) NOT NULL,
+documenttypeproperty1 VARCHAR(150) NOT NULL,
+documenttypeproperty2 VARCHAR(150) NOT NULL,
+documenttypeproperty3 VARCHAR(150) NOT NULL,
+documenttypeproperty4 VARCHAR(150) NOT NULL,
+documenttypeproperty5 VARCHAR(150) NOT NULL,
+casetypeid INT NOT NULL,
+PRIMARY KEY (id),
+UNIQUE (documenttypename)) ENGINE=InnoDB;
+
 -- CREATE TABLE file_storage(
 -- id BIGINT NOT NULL AUTO_INCREMENT,
 -- user_id BIGINT NOT NULL,
@@ -77,6 +108,12 @@ ALTER TABLE app_user_programarea ADD CONSTRAINT FK_AUPUSERID FOREIGN KEY (userid
 ALTER TABLE app_user_programarea ADD CONSTRAINT FK_AUPPPAREAID FOREIGN KEY (programareaid) REFERENCES app_programarea (id);
 
 ALTER TABLE app_programarea ADD CONSTRAINT FK_APAAGENCYID FOREIGN KEY (programareaagencyid) REFERENCES app_agency (id);
+
+ALTER TABLE app_casetype ADD CONSTRAINT FK_ACTPAREAID FOREIGN KEY (programareaid) REFERENCES app_programarea (id);
+
+ALTER TABLE app_caseproperty ADD CONSTRAINT FK_ACPCTID FOREIGN KEY (casetypeid) REFERENCES app_casetype (id);
+
+ALTER TABLE app_documenttype ADD CONSTRAINT FK_ADTCTID FOREIGN KEY (casetypeid) REFERENCES app_casetype (id);
 
 INSERT INTO `springbootrocks`.`app_user` (`username`, `password`, `useremail`, `userfirstname`, `userlastname`, `useraddress`) VALUES ('admin@admin', '$2a$10$EVfGJ5O6YLQs5Jj5ZOAKGuZ/2sLqXkNLw8j.MotNnYgHa1h2qUyIW', 'admin@admin', 'admin@admin', 'admin@admin', 'admin@admin');   
 INSERT INTO `springbootrocks`.`app_user` (`username`, `password`, `useremail`, `userfirstname`, `userlastname`, `useraddress`) VALUES ('admin1@admin1', '$2a$10$EVfGJ5O6YLQs5Jj5ZOAKGuZ/2sLqXkNLw8j.MotNnYgHa1h2qUyIW', 'admin1@admin1', 'admin1@admin1', 'admin1@admin1', 'admin1@admin1');
