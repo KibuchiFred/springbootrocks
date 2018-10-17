@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
@@ -17,10 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author 502491649
- */
 @Entity
 @Table(name = "persistent_logins", catalog = "springbootrocks", schema = "")
 @NamedQueries({ @NamedQuery(name = "PersistentLogins.findAll", query = "SELECT p FROM PersistentLogins p"),
@@ -115,7 +106,7 @@ public class PersistentLogins implements Serializable {
 
 	@Override
 	public String toString() {
-		return "javaapplication3.PersistentLogins[ series=" + series + " ]";
+		return "com.spring.boot.rocks.model.PersistentLogins[ series=" + series + " ]";
 	}
 
 }

@@ -7,7 +7,7 @@
 			<form:input type="hidden" path="id" id="id" />
 			<div class="card-header bg-info text-white p-0">
 				<div style="text-align: center">
-					<h4>Add / Update Program Area</h4>
+					<h4>Add / Update Casetype</h4>
 				</div>
 			</div>
 			<br>
@@ -15,7 +15,7 @@
 			<div class="row">
 				<label class="col-md-3" for="casetypename">Casetype
 					Name</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="casetypename">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<c:choose>
@@ -40,7 +40,7 @@
 
 			<div class="row">
 				<label class="col-md-3" for="appProgramarea">Associate with Programarea</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="casetypename">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:select path="appProgramarea"  class="form-control input-sm input-sm">

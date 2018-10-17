@@ -1,4 +1,3 @@
-
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
@@ -166,7 +165,7 @@ public class AppProgramarea implements Serializable {
 
 	@Override
 	public String toString() {
-		return "javaapplication1.AppProgramarea[ id=" + id + " ]";
+		return "com.spring.boot.rocks.model.AppProgramarea[ id=" + id + " ]";
 	}
 
 }

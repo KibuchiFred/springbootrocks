@@ -15,7 +15,7 @@
 
 			<div class="row">
 				<label class="col-md-3" for="agencyname">Agency Name</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="agencyname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<c:choose>
@@ -40,7 +40,7 @@
 
 			<div class="row">
 				<label class="col-md-3" for="agencylocation">Agency Location</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="agencylocation">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="agencylocation"
@@ -54,7 +54,7 @@
 
 			<div class="row">
 				<label class="col-md-3" for="agencyaddress">Agency Address</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="agencyaddress">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="agencyaddress" class="form-control"
@@ -68,7 +68,7 @@
 			<div class="row">
 				<label class="col-md-3" for="agencyheadname">Agency-Head
 					Name</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="agencyheadname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="agencyheadname"
@@ -83,7 +83,7 @@
 			<div class="row">
 				<label class="col-md-3" for="agencyheademail">Agency-Head
 					EmailID</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="agencyheademail">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="agencyheademail"

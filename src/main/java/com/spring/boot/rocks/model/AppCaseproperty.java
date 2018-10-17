@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -17,10 +14,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 
 @Entity
 @Table(name = "app_caseproperty", catalog = "springbootrocks", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "AppCaseproperty.findAll", query = "SELECT a FROM AppCaseproperty a")
     , @NamedQuery(name = "AppCaseproperty.findById", query = "SELECT a FROM AppCaseproperty a WHERE a.id = :id")
@@ -52,10 +54,14 @@ public class AppCaseproperty implements Serializable {
     @Basic(optional = false)
     @Column(name = "caseproperty5")
     private String caseproperty5;
+    
     //@JoinColumn(name = "casetypeid", referencedColumnName = "id")
-    @ManyToOne(optional = false)
     @JoinColumn(name = "casetypeid", foreignKey = @ForeignKey(name = "FK_ACPCTID"))
+    @ManyToOne(optional = false)
     private AppCasetype appCasetype;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "appCaseproperty")
+    private Collection<AppWorkqueue> appWorkqueueCollection;
 
     public AppCaseproperty() {
     }
@@ -129,6 +135,15 @@ public class AppCaseproperty implements Serializable {
         this.appCasetype = appCasetype;
     }
 
+    @XmlTransient
+    public Collection<AppWorkqueue> getAppWorkqueueCollection() {
+        return appWorkqueueCollection;
+    }
+
+    public void setAppWorkqueueCollection(Collection<AppWorkqueue> appWorkqueueCollection) {
+        this.appWorkqueueCollection = appWorkqueueCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -151,7 +166,7 @@ public class AppCaseproperty implements Serializable {
 
     @Override
     public String toString() {
-        return "javaapplication1.AppCaseproperty[ id=" + id + " ]";
+        return "com.spring.boot.rocks.model.AppCaseproperty[ id=" + id + " ]";
     }
     
 }

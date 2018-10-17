@@ -15,7 +15,7 @@
 			<div class="row">
 				<label class="col-md-3" for="programareaname">Program Area
 					Name</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programareaname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<c:choose>
@@ -40,7 +40,7 @@
 
 			<div class="row">
 				<label class="col-md-3" for="appAgency">Associate with Agency</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programareaname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:select path="appAgency"  class="form-control input-sm input-sm">
@@ -60,7 +60,7 @@
 			<div class="row">
 				<label class="col-md-3" for="programarealocation">Program
 					Area Location</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programarealocation">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="programarealocation"
@@ -75,7 +75,7 @@
 			<div class="row">
 				<label class="col-md-3" for="programareaaddress">Program
 					Area Address</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programareaaddress">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="programareaaddress"
@@ -90,7 +90,7 @@
 			<div class="row">
 				<label class="col-md-3" for="programareaheadname">Programarea-Head
 					Name</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programareaheadname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="programareaheadname"
@@ -105,7 +105,7 @@
 			<div class="row">
 				<label class="col-md-3" for="programareaheademail">Programarea-Head
 					EmailID</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="programareaheademail">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="programareaheademail"

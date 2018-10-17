@@ -4,7 +4,7 @@
 	<div class="container-fluid ">
 		<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
-				<h4>Manage Case Types</h4>
+				<h4>Manage Document Types</h4>
 			</div>
 		</div>
 		<br>
@@ -14,7 +14,14 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Casetype Name</th>
+					<th>Document Type Name</th>
+					<th>Document Type Property 1</th>
+					<th>Document Type Property 2</th>
+					<th>Document Type Property 3</th>
+					<th>Document Type Property 4</th>
+					<th>Document Type Property 5</th>
+					
+					
 <!-- 					<th>Associated Program Area</th> -->
 
 					<th><sec:authorize
@@ -25,11 +32,17 @@
 			</thead>
 
 			<tbody>
-				<c:forEach items="${casetypes}" var="casetype">
+				<c:forEach items="${documenttypes}" var="documenttype">
 					<tr>
-						<td>${casetype.id}</td>
-						<td>${casetype.casetypename}</td>
-<%-- 						<td>${casetype.appProgramarea}</td> --%>
+						<td>${documenttype.id}</td>
+						<td>${documenttype.documenttypename}</td>
+						<td>${documenttype.documenttypeproperty1}</td>
+						<td>${documenttype.documenttypeproperty2}</td>
+						<td>${documenttype.documenttypeproperty3}</td>
+						<td>${documenttype.documenttypeproperty4}</td>
+						<td>${documenttype.documenttypeproperty5}</td>
+						
+<%-- 						<td>${documenttype.appProgramarea}</td> --%>
 <%-- 							<td><c:forEach items="${appProgramarea}" var="list"> --%>
 <%-- 							-${list.programareaname}-</c:forEach></td> --%>
 
@@ -41,11 +54,11 @@
 								</button>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
-								<a href="<c:url value='/edit-casetype-${casetype.casetypename}' />"
+								<a href="<c:url value='/edit-documenttype-${documenttype.documenttypename}' />"
 									class="btn btn-outline-warning btn-sm"><span
 									class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
-								<a href="<c:url value='/delete-casetype-${casetype.casetypename}' />"
+								<a href="<c:url value='/delete-documenttype-${documenttype.documenttypename}' />"
 									class="btn btn-outline-danger btn-sm delBtn"><span
 									class="fas fa-trash-alt"></span></a>
 							</sec:authorize></td>
@@ -55,16 +68,16 @@
 		</table>
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
-				<a href="<c:url value='/casetyperegistration' />"
+				<a href="<c:url value='/documenttyperegistration' />"
 					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
-					Add Casetype</a>
+					Add Document Type</a>
 			</sec:authorize>
 		</span>
 	</div>
 
 
 
-	<!-- #Modal to view Casetype details -->
+	<!-- #Modal to view Document Type details -->
 	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
 		aria-labelledby="viewModalLabel" aria-hidden="true">
 
@@ -72,7 +85,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="removeModalCenterTitle">View
-						Casetype Details</h5>
+						Document Type Details</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -93,7 +106,7 @@
 
 
 
-	<!-- #Modal for removing Casetypes -->
+	<!-- #Modal for removing Document Types -->
 	<div class="modal fade" id="removeModalCenter" tabindex="-1"
 		role="dialog" aria-labelledby="removeModalCenterTitle"
 		aria-hidden="true">
@@ -109,7 +122,7 @@
 				</div>
 				<div class="modal-body">
 					<p class="alert alert-danger">Are you sure you want to delete
-						this Casetype?</p>
+						this Document Type?</p>
 				</div>
 				<div class="modal-footer">
 					<a href="" class="btn btn-danger" id="delRef"><span

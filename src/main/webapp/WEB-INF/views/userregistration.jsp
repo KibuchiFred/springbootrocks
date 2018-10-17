@@ -12,8 +12,8 @@
 			<br>
 
 			<div class="row">
-				<label class="col-md-2" for="username">User Name</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="username">User Name</label>
+				<div class="col-md-8">
 					<spring:bind path="username">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<c:choose>
@@ -33,8 +33,8 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="password">Password</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="password">Password</label>
+				<div class="col-md-8">
 					<spring:bind path="password">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="password" path="password" class="form-control"
@@ -46,9 +46,9 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="passwordConfirm">Confirm
+				<label class="col-md-3" for="passwordConfirm">Confirm
 					Password</label>
-				<div class="col-md-7">
+				<div class="col-md-8">
 					<spring:bind path="passwordConfirm">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="password" path="passwordConfirm"
@@ -61,8 +61,8 @@
 
 
 			<div class="row">
-				<label class="col-md-2" for="useremail">Email-ID</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="useremail">Email-ID</label>
+				<div class="col-md-8">
 					<spring:bind path="useremail">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="useremail" class="form-control"
@@ -74,8 +74,8 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="userfirstname">First Name</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="userfirstname">First Name</label>
+				<div class="col-md-8">
 					<spring:bind path="userfirstname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="userfirstname" class="form-control"
@@ -87,8 +87,8 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="userlastname">Last Name</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="userlastname">Last Name</label>
+				<div class="col-md-8">
 					<spring:bind path="userlastname">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="userlastname" class="form-control"
@@ -100,8 +100,8 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="useraddress">Address</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="useraddress">Address</label>
+				<div class="col-md-8">
 					<spring:bind path="useraddress">
 						<div class="form-group ${status.error ? 'has-error' : ''}">
 							<form:input type="text" path="useraddress" class="form-control"
@@ -113,27 +113,30 @@
 			</div>
 
 			<div class="row">
-				<label class="col-md-2" for="roles">Roles Available</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="roles">Roles Available</label>
+				<div class="col-md-8">
+				<spring:bind path="roles">
 					<form:select path="roles" items="${roles}" multiple="true"
 						itemValue="id" itemLabel="name"
 						class="form-control input-sm input-sm" />
 					<div class="has-error">
 						<form:errors path="roles" class="help-inline" />
 					</div>
+					</spring:bind>
 				</div>
-			</div>
-
+			</div><br>
 
 			<div class="row">
-				<label class="col-md-2" for="programareas">Program Areas Available</label>
-				<div class="col-md-7">
+				<label class="col-md-3" for="programareas">Program Areas Available</label>
+				<div class="col-md-8">
+				<spring:bind path="programareas">
 					<form:select path="programareas" items="${programareas}" multiple="true"
 						itemValue="id" itemLabel="programareaname"
 						class="form-control input-sm input-sm" />
 					<div class="has-error">
 						<form:errors path="programareas" class="help-inline" />
 					</div>
+					</spring:bind>
 				</div>
 			</div>
 

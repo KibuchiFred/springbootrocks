@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
@@ -21,9 +16,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name = "app_casetype", catalog = "springbootrocks", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "AppCasetype.findAll", query = "SELECT a FROM AppCasetype a")
     , @NamedQuery(name = "AppCasetype.findById", query = "SELECT a FROM AppCasetype a WHERE a.id = :id")
@@ -39,6 +37,7 @@ public class AppCasetype implements Serializable {
     @Basic(optional = false)
     @Column(name = "casetypename")
     private String casetypename;
+    
     //@JoinColumn(name = "programareaid", referencedColumnName = "id")
     
     @ManyToOne(optional = false)
@@ -50,6 +49,12 @@ public class AppCasetype implements Serializable {
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "appCasetype")
     private Collection<AppDocumenttype> appDocumenttypeCollection;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "appCasetype")
+    private Collection<AppWorkqueue> appWorkqueueCollection;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "appCasetype")
+    private Collection<AppCasestep> appCasestepCollection;
 
     public AppCasetype() {
     }
@@ -87,6 +92,7 @@ public class AppCasetype implements Serializable {
         this.appProgramarea = appProgramarea;
     }
 
+    @XmlTransient
     public Collection<AppCaseproperty> getAppCasepropertyCollection() {
         return appCasepropertyCollection;
     }
@@ -95,12 +101,31 @@ public class AppCasetype implements Serializable {
         this.appCasepropertyCollection = appCasepropertyCollection;
     }
 
+    @XmlTransient
     public Collection<AppDocumenttype> getAppDocumenttypeCollection() {
         return appDocumenttypeCollection;
     }
 
     public void setAppDocumenttypeCollection(Collection<AppDocumenttype> appDocumenttypeCollection) {
         this.appDocumenttypeCollection = appDocumenttypeCollection;
+    }
+
+    @XmlTransient
+    public Collection<AppWorkqueue> getAppWorkqueueCollection() {
+        return appWorkqueueCollection;
+    }
+
+    public void setAppWorkqueueCollection(Collection<AppWorkqueue> appWorkqueueCollection) {
+        this.appWorkqueueCollection = appWorkqueueCollection;
+    }
+
+    @XmlTransient
+    public Collection<AppCasestep> getAppCasestepCollection() {
+        return appCasestepCollection;
+    }
+
+    public void setAppCasestepCollection(Collection<AppCasestep> appCasestepCollection) {
+        this.appCasestepCollection = appCasestepCollection;
     }
 
     @Override
@@ -125,7 +150,7 @@ public class AppCasetype implements Serializable {
 
     @Override
     public String toString() {
-        return "javaapplication1.AppCasetype[ id=" + id + " ]";
+        return "com.spring.boot.rocks.model.AppCasetype[ id=" + id + " ]";
     }
     
 }

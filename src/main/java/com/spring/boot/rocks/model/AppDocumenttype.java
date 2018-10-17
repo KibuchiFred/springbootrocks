@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.spring.boot.rocks.model;
 
 import java.io.Serializable;
@@ -18,9 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "app_documenttype", catalog = "springbootrocks", schema = "")
+@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "AppDocumenttype.findAll", query = "SELECT a FROM AppDocumenttype a")
     , @NamedQuery(name = "AppDocumenttype.findById", query = "SELECT a FROM AppDocumenttype a WHERE a.id = :id")
@@ -56,10 +53,11 @@ public class AppDocumenttype implements Serializable {
     @Basic(optional = false)
     @Column(name = "documenttypeproperty5")
     private String documenttypeproperty5;
-    //@JoinColumn(name = "casetypeid", referencedColumnName = "id")
     
-    @ManyToOne(optional = false)
+    
+//    @JoinColumn(name = "casetypeid", referencedColumnName = "id")
     @JoinColumn(name = "casetypeid", foreignKey = @ForeignKey(name = "FK_ADTCTID"))
+    @ManyToOne(optional = false)
     private AppCasetype appCasetype;
 
     public AppDocumenttype() {
@@ -165,7 +163,7 @@ public class AppDocumenttype implements Serializable {
 
     @Override
     public String toString() {
-        return "javaapplication1.AppDocumenttype[ id=" + id + " ]";
+        return "com.spring.boot.rocks.model.AppDocumenttype[ id=" + id + " ]";
     }
     
 }

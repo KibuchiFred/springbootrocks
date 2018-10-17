@@ -144,7 +144,7 @@ public class AppAgency implements Serializable {
 
     @Override
     public String toString() {
-        return "javaapplication1.AppAgency[ id=" + id + " ]";
+        return "com.spring.boot.rocks.model.AppAgency[ id=" + id + " ]";
     }
     
 }

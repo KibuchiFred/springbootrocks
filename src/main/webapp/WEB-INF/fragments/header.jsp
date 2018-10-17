@@ -85,7 +85,7 @@
 <script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="#">SPRING ENTERPRISE</a>
+		<a class="navbar-brand" href="#">SPRING BOOTERPRISE</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarCollapse" aria-controls="navbarCollapse"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -144,6 +144,10 @@
 						Areas</a>
 						<a
 						class="dropdown-item" href="/casetypelist">Manage Case Types</a>
+						<a
+						class="dropdown-item" href="/casesteplist">Manage Case Steps</a>
+						<a
+						class="dropdown-item" href="/documenttypelist">Manage Document Types</a>
 						
 						<a class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
