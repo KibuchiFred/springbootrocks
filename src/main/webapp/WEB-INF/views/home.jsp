@@ -33,11 +33,11 @@
 		</h6>
 		<ul class="nav flex-column mb-2">
 			<li class="nav-item"><a class="nav-link active" href="#">
-					This month </a></li>
+					Cases Opened This Month </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Last quarter </a></li>
+					Cases Opened Last quarter </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Year-end report </a></li>
+					Yearly report </a></li>
 		</ul>
 	</div>
 </nav>

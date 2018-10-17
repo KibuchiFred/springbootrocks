@@ -161,8 +161,7 @@
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Program Area Admin</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Manage Users</a> <a
-						class="dropdown-item" href="#">Assign Roles</a> <a
+					<a class="dropdown-item" href="#">Actions</a> <a
 						class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">And Some More</a>
