@@ -5,7 +5,7 @@ Spring Boot 2.1.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
 
 For details, please visit: 
 
-# https://abcdjavaee.blogspot.com/2018/05/spring-boot-security-data-jpa-hibernate.html
+https://abcdjavaee.blogspot.com/2018/05/spring-boot-security-data-jpa-hibernate.html
 
 
 # What we will accomplish:
