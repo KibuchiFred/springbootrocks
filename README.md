@@ -27,13 +27,7 @@ UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 
 # Technologies Used (as on Oct 10, 2018):
 
-Spring Boot - 2.0.5
-
-Spring Data JPA 2.0.x
-
-Spring web/security 5.0.x
-
-Hibernate 5.2.xx
+Spring Boot - 2.1.0
 
 # For UI: 
 
