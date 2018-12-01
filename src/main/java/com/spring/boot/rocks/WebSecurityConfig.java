@@ -70,20 +70,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return authenticationManager();
 	}
 
-	@Bean
-	public SimpleUrlHandlerMapping faviconHandlerMapping() {
-		SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
-		mapping.setOrder(Integer.MIN_VALUE);
-		mapping.setUrlMap(Collections.singletonMap("favicon.ico", faviconRequestHandler()));
-		return mapping;
-	}
+//	@Bean
+//	public SimpleUrlHandlerMapping faviconHandlerMapping() {
+//		SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
+//		mapping.setOrder(Integer.MIN_VALUE);
+//		mapping.setUrlMap(Collections.singletonMap("favicon.ico", faviconRequestHandler()));
+//		return mapping;
+//	}
 
-	@Bean
-	protected ResourceHttpRequestHandler faviconRequestHandler() {
-		ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler();
-		requestHandler.setLocations(Arrays.<Resource>asList(new ClassPathResource("/")));
-		return requestHandler;
-	}
+//	@Bean
+//	protected ResourceHttpRequestHandler faviconRequestHandler() {
+//		ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler();
+//		requestHandler.setLocations(Arrays.<Resource>asList(new ClassPathResource("/")));
+//		return requestHandler;
+//	}
 
 	@Bean
 	public PersistentTokenRepository persistentTokenRepository() {
@@ -91,4 +91,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		tokenRepository.setDataSource(dataSource);
 		return tokenRepository;
 	}
+
 }

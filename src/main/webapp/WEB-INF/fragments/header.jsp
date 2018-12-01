@@ -104,24 +104,24 @@
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Case Management</a>
+						aria-expanded="false">Drop Down List</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#">Action</a> <a
 								class="dropdown-item" href="#">Another action</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#">Something else here</a>
 							<div class="dropdown-divider"></div>
-							<h6 class="text-muted" href="#">Cases</h6>
-							<a class="dropdown-item" href="#"> All Cases </a> <a
-								class="dropdown-item" href="#"> Assigned to my role </a> <a
-								class="dropdown-item" href="#"> Assigned to my group </a> <a
-								class="dropdown-item" href="#"> Search Cases </a> <a
+							<h6 class="text-muted" href="#">Group1</h6>
+							<a class="dropdown-item" href="#"> Somelink </a> <a
+								class="dropdown-item" href="#"> Somelink </a> <a
+								class="dropdown-item" href="#"> Somelink </a> <a
+								class="dropdown-item" href="#"> Search </a> <a
 								class="dropdown-item" href="#"> Delegate</a> <a
 								class="dropdown-item" href="#"> Messages</a>
 							<h6 class="text-muted" href="#">Reports</h6>
-							<a class="dropdown-item" href="#"> Cases Opened This Month</a> <a
-								class="dropdown-item" href="#"> Cases Opened Last quarter</a> <a
-								class="dropdown-item" href="#"> Yearly report</a>
+							<a class="dropdown-item" href="#"> This Month</a> <a
+								class="dropdown-item" href="#"> Last quarter</a> <a
+								class="dropdown-item" href="#"> Yearly </a>
 						</div></li>
 
 
@@ -138,16 +138,7 @@
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Super Admin</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
-						class="dropdown-item" href="/agencylist">Manage Agencies</a> <a
-						class="dropdown-item" href="/programarealist">Manage Program
-						Areas</a>
-						<a
-						class="dropdown-item" href="/casetypelist">Manage Case Types</a>
-						<a
-						class="dropdown-item" href="/casesteplist">Manage Case Steps</a>
-						<a
-						class="dropdown-item" href="/documenttypelist">Manage Document Types</a>
+					<a class="dropdown-item" href="/userlist">Manage Users</a> 
 						
 						<a class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
@@ -156,18 +147,7 @@
 			</div>
 
 
-			<div class="btn-group">
-				<button type="button" class="btn btn-info dropdown-toggle btn-sm"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Program Area Admin</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Actions</a> <a
-						class="dropdown-item" href="#">More Actions</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">And Some More</a>
-				</div>
-			</div>
-
+			
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control form-control-sm mr-sm-2" type="text"
 					placeholder="Search" aria-label="Search">

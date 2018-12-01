@@ -126,19 +126,7 @@
 				</div>
 			</div><br>
 
-			<div class="row">
-				<label class="col-md-3" for="programareas">Program Areas Available</label>
-				<div class="col-md-8">
-				<spring:bind path="programareas">
-					<form:select path="programareas" items="${programareas}" multiple="true"
-						itemValue="id" itemLabel="programareaname"
-						class="form-control input-sm input-sm" />
-					<div class="has-error">
-						<form:errors path="programareas" class="help-inline" />
-					</div>
-					</spring:bind>
-				</div>
-			</div>
+			
 
 
 

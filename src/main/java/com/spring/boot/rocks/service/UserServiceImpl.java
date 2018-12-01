@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 		user.setUsername(user.getUsername());
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setRoles(user.getRoles());
-		user.setProgramareas(user.getProgramareas());
+		
 		user.setUseremail(user.getUseremail());
 		user.setUserfirstname(user.getUserfirstname());
 		user.setUserlastname(user.getUserlastname());
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
 			entity.setUserlastname(user.getUserlastname());
 			entity.setUseraddress(user.getUseraddress());
 			entity.setRoles(user.getRoles());
-			entity.setProgramareas(user.getProgramareas());
+			
 
 		}
 		userRepository.save(entity);

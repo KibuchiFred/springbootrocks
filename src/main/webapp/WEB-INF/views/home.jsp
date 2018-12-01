@@ -12,14 +12,14 @@
 		</h6>
 		<ul class="nav flex-column">
 			<li class="nav-item"><a class="nav-link active" href="#">
-					All Cases <span class="sr-only">(current)</span>
+					All  <span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Assigned to my role </a></li>
+					Some Link </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Assigned to my group </a></li>
+					Some Link </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Search Cases </a></li>
+					Some Link </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
 					Delegate </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
@@ -33,23 +33,24 @@
 		</h6>
 		<ul class="nav flex-column mb-2">
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Cases Opened This Month </a></li>
+					Some Link </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
-					Cases Opened Last quarter </a></li>
+					CSome Link </a></li>
 			<li class="nav-item"><a class="nav-link active" href="#">
 					Yearly report </a></li>
 		</ul>
 	</div>
 </nav>
 
-<body>
+<body> 
+
+
 
 	<div class="container">
 		<div class="card-header bg-info text-white p-0">
 			<h4>
-				Welcome <strong style="color: red;">${pageContext.request.userPrincipal.name}</strong>
-				!! - Spring Boot based <strong style="color: blue;">Case
-					Management</strong> Demo
+				Welcome <strong>${pageContext.request.userPrincipal.name}</strong>
+				!! - Spring Boot based Demo
 			</h4>
 			<%--   <h6><a href="${contextPath}/logout"><p style="text-align:center">Logout</a></p></h6> --%>
 		</div>

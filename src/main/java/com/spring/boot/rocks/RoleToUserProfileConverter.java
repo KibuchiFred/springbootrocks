@@ -24,5 +24,5 @@ public class RoleToUserProfileConverter implements Converter<Object, AppRole> {
 		logger.info("Profile : {}", role);
 		return role;
 	}
-
+ 
 }

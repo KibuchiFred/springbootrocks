@@ -25,10 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.spring.boot.rocks.model.AppProgramarea;
 import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
-import com.spring.boot.rocks.repository.ProgramareaRepository;
 import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.UserService;
 import com.spring.boot.rocks.validator.UserEditValidator;
@@ -44,8 +42,6 @@ public class UserController {
 	@Autowired
 	private RoleRepository roleRepo;
 
-	@Autowired
-	private ProgramareaRepository programareaRepo;
 
 	@Autowired
 	private UserAddValidator useraddValidator;
@@ -132,11 +128,7 @@ public class UserController {
 		return (List<AppRole>) roleRepo.findAll();
 	}
 
-	@ModelAttribute("programareas")
-	public List<AppProgramarea> initializeProgramareas() {
-		return (List<AppProgramarea>) programareaRepo.findAll();
-	}
-
+	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		if (error != null)

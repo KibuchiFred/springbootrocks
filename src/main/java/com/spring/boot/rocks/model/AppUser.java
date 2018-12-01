@@ -66,10 +66,7 @@ public class AppUser implements Serializable {
 
 	private List<AppRole> roles;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "app_user_programarea", joinColumns = @JoinColumn(name = "userid"), inverseJoinColumns = @JoinColumn(name = "programareaid"))
-
-	private List<AppProgramarea> programareas;
+	
 
 	public List<AppRole> getRoles() {
 		return roles;
@@ -79,13 +76,7 @@ public class AppUser implements Serializable {
 		this.roles = roles;
 	}
 
-	public List<AppProgramarea> getProgramareas() {
-		return programareas;
-	}
-
-	public void setProgramareas(List<AppProgramarea> programareas) {
-		this.programareas = programareas;
-	}
+	
 
 	public Long getId() {
 		return id;
