@@ -1,6 +1,6 @@
 # Spring Boot Rocks !!!
 
-Spring Boot 2.0.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
+Spring Boot 2.1.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
 
 
 For details, please visit: 
