@@ -42,10 +42,10 @@
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
-								<button class="btn btn-sm btn-outline-primary viewBtn"
-									data-toggle="modal" data-target="#viewModal">
-									<span class="far fa-id-card"></span>
-								</button>
+								<a href="<c:url value='/view-user-${user.username}' />"
+									class="btn btn-outline-info btn-sm"><span
+									class="far fa-id-card"></span></a>
+									
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-user-${user.username}' />"
@@ -71,33 +71,7 @@
 
 
 
-	<!-- #Modal to view user details -->
-	<div class="modal fade" id="viewModal" tabindex="-1" role="dialog"
-		aria-labelledby="viewModalLabel" aria-hidden="true">
-
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="removeModalCenterTitle">View User
-						Details</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div id="viewbody" class="modal-body"></div>
-				<!-- 				<div class="modal-footer"> -->
-				<!-- 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-				<!-- 					<button type="button" class="btn btn-primary">Save changes</button> -->
-				<!-- 				</div> -->
-				<button type="button" class="btn btn-info" data-dismiss="modal">
-					<span class="fa fa-times"> Close</span>
-				</button>
-			</div>
-		</div>
-	</div>
-
-
+	
 
 
 	<!-- #Modal for removing users -->
