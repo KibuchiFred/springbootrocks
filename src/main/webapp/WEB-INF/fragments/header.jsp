@@ -43,41 +43,7 @@
 							$('#removeModalCenter').modal('show');
 						});
 
-						$(".viewBtn[data-target='#viewModal']")
-								.click(
-										function() {
-											var columnHeadings = $("thead th")
-													.map(function() {
-														return $(this).text();
-													}).get();
-											columnHeadings.pop();
-											var columnValues = $(this).parent()
-													.siblings().map(function() {
-														return $(this).text();
-													}).get();
-											var modalBody = $('<div id="modalContent"></div>');
-											var modalForm = $('<form role="form" name="modalForm" action="##" method="post"></form>');
-											$
-													.each(
-															columnHeadings,
-															function(i,
-																	columnHeader) {
-																var formGroup = $('<div class="form-group"></div>');
-																formGroup
-																		.append('<label for="'+columnHeader+'">'
-																				+ columnHeader
-																				+ '</label>');
-																formGroup
-																		.append('<input class="form-control" name="'+columnHeader+i+'" id="'+columnHeader+i+'" value="'+columnValues[i]+'" disabled/>');
-																modalForm
-																		.append(formGroup);
-															});
-											modalBody.append(modalForm);
-											$('#viewbody').html(modalBody);
-										});
-						$('.modal-footer .btn-primary').click(function() {
-							$('form[name="modalForm"]').submit();
-						});
+						
 
 						$('#tableitems').DataTable();
 					});
