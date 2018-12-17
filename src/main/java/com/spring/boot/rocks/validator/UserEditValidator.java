@@ -35,8 +35,6 @@ public class UserEditValidator implements Validator {
 
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "roles", "NotEmpty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "roles", "NoRoleSelected");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "programareas", "NotEmpty");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "programareas", "NoProgramareaSelected");
-
+		
 	}
 }
