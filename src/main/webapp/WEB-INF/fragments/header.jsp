@@ -24,31 +24,11 @@
 
 <link rel="stylesheet" href="/webjars/font-awesome/5.3.1/css/all.css">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/webjars/font-awesome/5.3.1/css/all.css">
 
 
-<script src="/webjars/popper.js/1.14.3/popper.min.js/"></script>
-<script src="/webjars/jquery/3.3.1-1/jquery.min.js/"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js/"></script>
-
-<script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-
-						//for delete user
-						$('.table .delBtn').on('click', function(event) {
-							event.preventDefault();
-							var href = $(this).attr('href');
-							$('#removeModalCenter #delRef').attr('href', href);
-							$('#removeModalCenter').modal('show');
-						});
-
-						
-
-						$('#tableitems').DataTable();
-					});
-</script>
-<script src="/webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<a class="navbar-brand" href="#">SPRING BOOTERPRISE</a>
