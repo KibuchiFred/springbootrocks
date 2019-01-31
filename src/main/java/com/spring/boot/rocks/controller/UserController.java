@@ -173,7 +173,7 @@ public class UserController {
         ByteArrayInputStream bis = GeneratePdfReport.userReport(users);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=citiesreport.pdf");
+        headers.add("Content-Disposition", "inline; filename=UsersReport.pdf");
 
         return ResponseEntity
                 .ok()
@@ -189,7 +189,7 @@ public class UserController {
 		 ByteArrayInputStream bis = GeneratePdfReport.oneuserReport(user);
 
 	        HttpHeaders headers = new HttpHeaders();
-	        headers.add("Content-Disposition", "inline; filename=citiesreport.pdf");
+	        headers.add("Content-Disposition", "inline; filename=" +username+".pdf");
 
 	        return ResponseEntity
 	                .ok()
