@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
 				.antMatchers("/webjars/**", "/resources/**", "/resources/css/**", "/fragments/**", "/registration",
-						"/login")
+						"/login","/userreport", "/export-user-**")
 				.permitAll().antMatchers("/delete-user-**").access("hasAuthority('ADMIN')").antMatchers("/edit-user-**")
 				.access("hasAuthority('ADMIN') or hasAuthority('EDITOR')").antMatchers("/view-user-**").permitAll()
 				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()

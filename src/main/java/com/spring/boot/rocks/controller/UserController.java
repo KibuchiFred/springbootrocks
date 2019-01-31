@@ -1,5 +1,7 @@
 package com.spring.boot.rocks.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -11,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,10 +33,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
+import com.spring.boot.rocks.model.GeneratePdfReport;
 import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.UserService;
-import com.spring.boot.rocks.validator.UserEditValidator;
 import com.spring.boot.rocks.validator.UserAddValidator;
+import com.spring.boot.rocks.validator.UserEditValidator;
 
 @Controller
 @RequestMapping("/")
@@ -155,6 +162,40 @@ public class UserController {
 	public String accessDeniedPage(ModelMap model) {
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "useraccessDenied";
+	}
+	
+	@RequestMapping(value = "/alluserreport", method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<InputStreamResource> allusersReport() throws IOException {
+
+        List<AppUser> users = (List<AppUser>) userService.findAllUsers();
+
+        ByteArrayInputStream bis = GeneratePdfReport.userReport(users);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "inline; filename=citiesreport.pdf");
+
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(new InputStreamResource(bis));
+    }
+	
+	@RequestMapping(value = { "export-user-{username}" }, method = RequestMethod.GET)
+	public ResponseEntity<InputStreamResource> exportUser(@PathVariable String username, Model model) {
+		AppUser user = userService.findByUsername(username);
+		model.addAttribute("userForm", user);
+		 ByteArrayInputStream bis = GeneratePdfReport.oneuserReport(user);
+
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.add("Content-Disposition", "inline; filename=citiesreport.pdf");
+
+	        return ResponseEntity
+	                .ok()
+	                .headers(headers)
+	                .contentType(MediaType.APPLICATION_PDF)
+	                .body(new InputStreamResource(bis));
 	}
 
 	private String getPrincipal() {

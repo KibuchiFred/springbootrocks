@@ -42,6 +42,12 @@
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+								<a href="<c:url value='/export-user-${user.username}' />"
+									class="btn btn-outline-danger btn-sm" target="_blank"><i class="fas fa-file-pdf"></i></a>
+									
+							</sec:authorize>
+						<sec:authorize
+								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
 									class="btn btn-outline-info btn-sm"><span
 									class="far fa-id-card"></span></a>
@@ -67,12 +73,14 @@
 					Add User</a>
 			</sec:authorize>
 		</span>
+		<span class="floatRight"> <sec:authorize
+				access="hasAuthority('ADMIN')">
+				<a href="<c:url value='/alluserreport'  />"
+					class="btn btn-danger btn-sm"  target="_blank"><i class="fas fa-file-pdf"></i>
+					Export all users to PDF</a>
+			</sec:authorize>
+		</span>
 	</div>
-
-
-
-	
-
 
 	<!-- #Modal for removing users -->
 	<div class="modal fade" id="removeModalCenter" tabindex="-1"
