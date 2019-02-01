@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
+import com.spring.boot.rocks.model.GenerateCSVReport;
 import com.spring.boot.rocks.model.GeneratePdfReport;
 import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.UserService;
@@ -164,7 +165,7 @@ public class UserController {
 		return "useraccessDenied";
 	}
 	
-	@RequestMapping(value = "/alluserreport", method = RequestMethod.GET,
+	@RequestMapping(value = "/alluserreportPDF", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> allusersReport() throws IOException {
 
@@ -182,7 +183,7 @@ public class UserController {
                 .body(new InputStreamResource(bis));
     }
 	
-	@RequestMapping(value = { "export-user-{username}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "export-user-pdf-{username}" }, method = RequestMethod.GET)
 	public ResponseEntity<InputStreamResource> exportUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
@@ -197,6 +198,22 @@ public class UserController {
 	                .contentType(MediaType.APPLICATION_PDF)
 	                .body(new InputStreamResource(bis));
 	}
+	
+	@RequestMapping(value = "/alluserreportCSV",  method = RequestMethod.GET)
+    public void findCities(HttpServletResponse response) throws IOException {
+        List<AppUser> users = (List<AppUser>) userService.findAllUsers();
+        GenerateCSVReport.writeUsers(response.getWriter(), users);
+        response.setHeader("Content-Disposition", "attachment; filename=AllUsersCSVReport.csv");
+    }
+
+    @RequestMapping(value = "/export-user-csv-{username}",  method = RequestMethod.GET)
+    public void usercsvReport(@PathVariable  String username, HttpServletResponse response) throws IOException {
+//    	 HttpHeaders headers = new HttpHeaders();
+//	        headers.add("Content-Disposition", "inline; filename=" +username+".csv");
+	        response.setHeader("Content-Disposition", "attachment; filename=" +username+"CSVReport.csv");
+    	AppUser user = userService.findByUsername(username);
+        GenerateCSVReport.writeUser(response.getWriter(), user);
+    }
 
 	private String getPrincipal() {
 		String userName = null;

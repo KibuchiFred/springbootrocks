@@ -42,10 +42,19 @@
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
-								<a href="<c:url value='/export-user-${user.username}' />"
+								<a href="<c:url value='/export-user-pdf-${user.username}' />"
 									class="btn btn-outline-danger btn-sm" target="_blank"><i class="fas fa-file-pdf"></i></a>
 									
 							</sec:authorize>
+							
+							<sec:authorize
+								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+								<a href="<c:url value='/export-user-csv-${user.username}' />"
+									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-excel"></i></a>
+									
+							</sec:authorize>
+							
+							
 						<sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
@@ -69,15 +78,22 @@
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/registration' />"
-					class="btn btn-success btn-sm"><span class="fa fa-plus"></span>
+					class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>
 					Add User</a>
 			</sec:authorize>
 		</span>
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
-				<a href="<c:url value='/alluserreport'  />"
+				<a href="<c:url value='/alluserreportPDF'  />"
 					class="btn btn-danger btn-sm"  target="_blank"><i class="fas fa-file-pdf"></i>
 					Export all users to PDF</a>
+			</sec:authorize>
+		</span>
+		<span class="floatRight"> <sec:authorize
+				access="hasAuthority('ADMIN')">
+				<a href="<c:url value='/alluserreportCSV'  />"
+					class="btn btn-success btn-sm"  target="_blank"><i class="fas fa-file-excel"></i>
+					Export all users to CSV</a>
 			</sec:authorize>
 		</span>
 	</div>
