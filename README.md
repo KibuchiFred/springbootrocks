@@ -20,6 +20,10 @@ Remember-me feature
 
 CRUD Operations using Data JPA Hibernate
 
+Export entire list or individual list item to PDF or CSV 
+
+Generate QR BarCode for records from Database and list items.
+
 Form Validations
 
 UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
