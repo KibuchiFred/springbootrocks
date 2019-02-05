@@ -91,14 +91,14 @@
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportCSV'  />"
-					class="btn btn-success btn-sm"  target="_blank"><i class="fas fa-file-code"></i>
+					class="btn btn-success btn-sm"><i class="fas fa-file-code"></i>
 					Export all users to CSV</a>
 			</sec:authorize>
 		</span>
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportExcel'  />"
-					class="btn btn-primary btn-sm"  target="_blank"><i class="fas fa-file-excel"></i>
+					class="btn btn-primary btn-sm" ><i class="fas fa-file-excel"></i>
 					Export all users to MS-Excel</a>
 			</sec:authorize>
 		</span>
