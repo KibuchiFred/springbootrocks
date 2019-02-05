@@ -14,7 +14,9 @@
 							$('#removeModalCenter #delRef').attr('href', href);
 							$('#removeModalCenter').modal('show');
 						});
-						$('#tableitems').DataTable();
+						$('#tableitems').dataTable( {
+						        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
+						    } );
 					});
 </script>
 <footer class="footer">
