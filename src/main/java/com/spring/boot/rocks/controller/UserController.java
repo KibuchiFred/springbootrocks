@@ -25,6 +25,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
 import com.spring.boot.rocks.model.GenerateCSVReport;
+import com.spring.boot.rocks.model.GenerateExcelReport;
 import com.spring.boot.rocks.model.GeneratePdfReport;
 import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.UserService;
@@ -49,7 +51,6 @@ public class UserController {
 
 	@Autowired
 	private RoleRepository roleRepo;
-
 
 	@Autowired
 	private UserAddValidator useraddValidator;
@@ -136,7 +137,6 @@ public class UserController {
 		return (List<AppRole>) roleRepo.findAll();
 	}
 
-	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		if (error != null)
@@ -164,56 +164,60 @@ public class UserController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "useraccessDenied";
 	}
-	
-	@RequestMapping(value = "/alluserreportPDF", method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> allusersReport() throws IOException {
 
-        List<AppUser> users = (List<AppUser>) userService.findAllUsers();
+	@RequestMapping(value = "/alluserreportPDF", method = RequestMethod.GET, produces = MediaType.APPLICATION_PDF_VALUE)
+	public ResponseEntity<InputStreamResource> allusersReport() throws IOException {
 
-        ByteArrayInputStream bis = GeneratePdfReport.userReport(users);
+		List<AppUser> users = (List<AppUser>) userService.findAllUsers();
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=UsersReport.pdf");
+		ByteArrayInputStream bis = GeneratePdfReport.userReport(users);
 
-        return ResponseEntity
-                .ok()
-                .headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(new InputStreamResource(bis));
-    }
-	
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Disposition", "inline; filename=UsersReport.pdf");
+
+		return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
+				.body(new InputStreamResource(bis));
+	}
+
 	@RequestMapping(value = { "export-user-pdf-{username}" }, method = RequestMethod.GET)
 	public ResponseEntity<InputStreamResource> exportUser(@PathVariable String username, Model model) {
 		AppUser user = userService.findByUsername(username);
 		model.addAttribute("userForm", user);
-		 ByteArrayInputStream bis = GeneratePdfReport.oneuserReport(user);
+		ByteArrayInputStream bis = GeneratePdfReport.oneuserReport(user);
 
-	        HttpHeaders headers = new HttpHeaders();
-	        headers.add("Content-Disposition", "inline; filename=" +username+".pdf");
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Disposition", "inline; filename=" + username + ".pdf");
 
-	        return ResponseEntity
-	                .ok()
-	                .headers(headers)
-	                .contentType(MediaType.APPLICATION_PDF)
-	                .body(new InputStreamResource(bis));
+		return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
+				.body(new InputStreamResource(bis));
 	}
-	
-	@RequestMapping(value = "/alluserreportCSV",  method = RequestMethod.GET)
-    public void findCities(HttpServletResponse response) throws IOException {
-        List<AppUser> users = (List<AppUser>) userService.findAllUsers();
-        GenerateCSVReport.writeUsers(response.getWriter(), users);
-        response.setHeader("Content-Disposition", "attachment; filename=AllUsersCSVReport.csv");
-    }
 
-    @RequestMapping(value = "/export-user-csv-{username}",  method = RequestMethod.GET)
-    public void usercsvReport(@PathVariable  String username, HttpServletResponse response) throws IOException {
+	@RequestMapping(value = "/alluserreportCSV", method = RequestMethod.GET)
+	public void findCities(HttpServletResponse response) throws IOException {
+		List<AppUser> users = (List<AppUser>) userService.findAllUsers();
+		GenerateCSVReport.writeUsers(response.getWriter(), users);
+		response.setHeader("Content-Disposition", "attachment; filename=AllUsersCSVReport.csv");
+	}
+
+	@RequestMapping(value = "/export-user-csv-{username}", method = RequestMethod.GET)
+	public void usercsvReport(@PathVariable String username, HttpServletResponse response) throws IOException {
 //    	 HttpHeaders headers = new HttpHeaders();
 //	        headers.add("Content-Disposition", "inline; filename=" +username+".csv");
-	        response.setHeader("Content-Disposition", "attachment; filename=" +username+"CSVReport.csv");
-    	AppUser user = userService.findByUsername(username);
-        GenerateCSVReport.writeUser(response.getWriter(), user);
-    }
+		response.setHeader("Content-Disposition", "attachment; filename=" + username + "CSVReport.csv");
+		AppUser user = userService.findByUsername(username);
+		GenerateCSVReport.writeUser(response.getWriter(), user);
+	}
+
+	@GetMapping(value = "/alluserreportExcel")
+	public ResponseEntity<InputStreamResource> excelCustomersReport() throws IOException {
+		List<AppUser> users = (List<AppUser>) userService.findAllUsers();
+		ByteArrayInputStream in = GenerateExcelReport.usersToExcel(users);
+		// return IO ByteArray(in);
+		HttpHeaders headers = new HttpHeaders();
+		// set filename in header
+		headers.add("Content-Disposition", "attachment; filename=users.xlsx");
+		return ResponseEntity.ok().headers(headers).body(new InputStreamResource(in));
+	}
 
 	private String getPrincipal() {
 		String userName = null;

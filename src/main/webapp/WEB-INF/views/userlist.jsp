@@ -50,7 +50,7 @@
 							<sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-csv-${user.username}' />"
-									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-excel"></i></a>
+									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-code"></i></a>
 									
 							</sec:authorize>
 							
@@ -58,17 +58,16 @@
 						<sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
-									class="btn btn-outline-info btn-sm"><span
-									class="far fa-id-card"></span></a>
+									class="btn btn-outline-info btn-sm"><i class="fas fa-user"></i></a>
 									
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-user-${user.username}' />"
-									class="btn btn-outline-warning btn-sm"><span
+									class="btn btn-primary btn-sm"><span
 									class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
 								<a href="<c:url value='/delete-user-${user.username}' />"
-									class="btn btn-outline-danger btn-sm delBtn"><span
+									class="btn btn-danger btn-sm delBtn"><span
 									class="fas fa-trash-alt"></span></a>
 							</sec:authorize></td>
 					</tr>
@@ -92,8 +91,15 @@
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportCSV'  />"
-					class="btn btn-success btn-sm"  target="_blank"><i class="fas fa-file-excel"></i>
+					class="btn btn-success btn-sm"  target="_blank"><i class="fas fa-file-code"></i>
 					Export all users to CSV</a>
+			</sec:authorize>
+		</span>
+		<span class="floatRight"> <sec:authorize
+				access="hasAuthority('ADMIN')">
+				<a href="<c:url value='/alluserreportExcel'  />"
+					class="btn btn-primary btn-sm"  target="_blank"><i class="fas fa-file-excel"></i>
+					Export all users to MS-Excel</a>
 			</sec:authorize>
 		</span>
 	</div>
