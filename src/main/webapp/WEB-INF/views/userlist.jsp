@@ -19,7 +19,7 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Address</th>
-<!-- 					<th>Roles</th> -->
+					<!-- 					<th>Roles</th> -->
 
 					<th><sec:authorize
 							access="hasAuthority('ADMIN') or hasAuthority('DBA')">
@@ -37,34 +37,32 @@
 						<td>${user.userfirstname}</td>
 						<td>${user.userlastname}</td>
 						<td>${user.useraddress}</td>
-<%-- 						<td><c:forEach items="${roles}" var="list"> --%>
-<%-- 							-${list.name}-</c:forEach></td> --%>
+						<%-- 						<td><c:forEach items="${roles}" var="list"> --%>
+						<%-- 							-${list.name}-</c:forEach></td> --%>
 
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+								<a href="<c:url value='/export-user-json-${user.username}'  />"
+									class="btn btn-outline-success btn-sm" target="_blank">{ }</a>
+							</sec:authorize> <sec:authorize
+								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-pdf-${user.username}' />"
-									class="btn btn-outline-danger btn-sm" target="_blank"><i class="fas fa-file-pdf"></i></a>
-									
-							</sec:authorize>
-							
-							<sec:authorize
+									class="btn btn-outline-danger btn-sm" target="_blank"><i
+									class="fas fa-file-pdf"></i></a>
+							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-csv-${user.username}' />"
-									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-code"></i></a>
-									
-							</sec:authorize>
-							
-							
-						<sec:authorize
+									class="btn btn-outline-success btn-sm" target="_blank"><i
+									class="fas fa-file-code"></i></a>
+							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
 									class="btn btn-outline-info btn-sm"><i class="fas fa-user"></i></a>
-									
+
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
 								<a href="<c:url value='/edit-user-${user.username}' />"
-									class="btn btn-primary btn-sm"><span
-									class="far fa-edit"></span></a>
+									class="btn btn-primary btn-sm"><span class="far fa-edit"></span></a>
 							</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
 								<a href="<c:url value='/delete-user-${user.username}' />"
 									class="btn btn-danger btn-sm delBtn"><span
@@ -80,33 +78,29 @@
 					class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>
 					Add User</a>
 			</sec:authorize>
-		</span>
-		<span class="floatRight"> <sec:authorize
+		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportPDF'  />"
-					class="btn btn-danger btn-sm"  target="_blank"><i class="fas fa-file-pdf"></i>
-					Export all users to PDF</a>
+					class="btn btn-danger btn-sm" target="_blank"><i
+					class="fas fa-file-pdf"></i> Export all users to PDF</a>
 			</sec:authorize>
-		</span>
-		<span class="floatRight"> <sec:authorize
+		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportCSV'  />"
 					class="btn btn-success btn-sm"><i class="fas fa-file-code"></i>
 					Export all users to CSV</a>
 			</sec:authorize>
-		</span>
-		<span class="floatRight"> <sec:authorize
+		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportExcel'  />"
-					class="btn btn-primary btn-sm" ><i class="fas fa-file-excel"></i>
+					class="btn btn-primary btn-sm"><i class="fas fa-file-excel"></i>
 					Export all users to MS-Excel</a>
 			</sec:authorize>
-		</span>
-		<span class="floatRight"> <sec:authorize
+		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportJSON'  />"
-					class="btn btn-info btn-sm" target="_blank"> { }
-					Export all users to JSON</a>
+					class="btn btn-info btn-sm" target="_blank"> { } Export all
+					users to JSON</a>
 			</sec:authorize>
 		</span>
 	</div>

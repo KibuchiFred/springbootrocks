@@ -240,6 +240,25 @@ public class UserController {
 		}
 		return arrayToJson;
 	}
+	
+	@RequestMapping("/export-user-json-{username}")
+	public @ResponseBody String getuserJSON(@PathVariable String username, HttpServletResponse response) {
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+    	//Set pretty printing of json
+    	objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+		@SuppressWarnings("unused")
+		String exception = null;
+		String arrayToJson = null;
+		try {
+			AppUser user = userService.findByUsername(username);
+			arrayToJson = objectMapper.writeValueAsString(user);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			exception = ex.getMessage();
+		}
+		return arrayToJson;
+	}
 
 	private String getPrincipal() {
 		String userName = null;
