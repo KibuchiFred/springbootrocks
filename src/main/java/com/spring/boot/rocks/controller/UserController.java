@@ -30,6 +30,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.boot.rocks.model.AppRole;
@@ -217,6 +219,20 @@ public class UserController {
 		// set filename in header
 		headers.add("Content-Disposition", "attachment; filename=users.xlsx");
 		return ResponseEntity.ok().headers(headers).body(new InputStreamResource(in));
+	}
+
+	@RequestMapping("/alluserreportJSON")
+	public @ResponseBody List<AppUser> getusersJSON() {
+		List<AppUser> userlist = null;
+		@SuppressWarnings("unused")
+		String exception = null;
+		try {
+			userlist = userService.findAllUsers();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			exception = ex.getMessage();
+		}
+		return userlist;
 	}
 
 	private String getPrincipal() {

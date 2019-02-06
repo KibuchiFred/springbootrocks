@@ -102,6 +102,13 @@
 					Export all users to MS-Excel</a>
 			</sec:authorize>
 		</span>
+		<span class="floatRight"> <sec:authorize
+				access="hasAuthority('ADMIN')">
+				<a href="<c:url value='/alluserreportJSON'  />"
+					class="btn btn-info btn-sm" target="_blank"> { }
+					Export all users to JSON</a>
+			</sec:authorize>
+		</span>
 	</div>
 
 	<!-- #Modal for removing users -->
