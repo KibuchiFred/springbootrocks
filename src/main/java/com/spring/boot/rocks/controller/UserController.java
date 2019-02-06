@@ -30,10 +30,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.spring.boot.rocks.model.AppRole;
 import com.spring.boot.rocks.model.AppUser;
 import com.spring.boot.rocks.model.GenerateCSVReport;
@@ -222,17 +223,22 @@ public class UserController {
 	}
 
 	@RequestMapping("/alluserreportJSON")
-	public @ResponseBody List<AppUser> getusersJSON() {
+	public @ResponseBody String getusersJSON() {
+		ObjectMapper objectMapper = new ObjectMapper();
+    	//Set pretty printing of json
+    	objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 		List<AppUser> userlist = null;
 		@SuppressWarnings("unused")
 		String exception = null;
+		String arrayToJson = null;
 		try {
 			userlist = userService.findAllUsers();
+			arrayToJson = objectMapper.writeValueAsString(userlist);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			exception = ex.getMessage();
 		}
-		return userlist;
+		return arrayToJson;
 	}
 
 	private String getPrincipal() {
