@@ -4,9 +4,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class ZHelper_PasswordEncoder {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		String password = "admin@admin";
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
