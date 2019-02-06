@@ -193,7 +193,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/alluserreportCSV", method = RequestMethod.GET)
-	public void findCities(HttpServletResponse response) throws IOException {
+	public void csvUsers(HttpServletResponse response) throws IOException {
 		List<AppUser> users = (List<AppUser>) userService.findAllUsers();
 		GenerateCSVReport.writeUsers(response.getWriter(), users);
 		response.setHeader("Content-Disposition", "attachment; filename=AllUsersCSVReport.csv");
