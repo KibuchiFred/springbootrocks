@@ -20,7 +20,7 @@ Remember-me feature
 
 CRUD Operations using Data JPA Hibernate
 
-Export entire list or individual list item to PDF (with QRCode, using itext) or CSV 
+Export entire list or individual list item to PDF (with QRCode, using itext) or CSV or JSON
 
 Export entire list to Excel using poi
 
