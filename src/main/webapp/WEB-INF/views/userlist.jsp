@@ -54,6 +54,12 @@
 								<a href="<c:url value='/export-user-csv-${user.username}' />"
 									class="btn btn-outline-success btn-sm" target="_blank"><i
 									class="fas fa-file-code"></i></a>
+							</sec:authorize>
+							<sec:authorize
+								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+								<a href="<c:url value='/export-user-xml-${user.username}' />"
+									class="btn btn-outline-warning btn-sm" target="_blank"><i
+									class="fas fa-file-code"></i></a>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"

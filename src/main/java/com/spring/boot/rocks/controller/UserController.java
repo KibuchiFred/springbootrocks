@@ -211,6 +211,16 @@ public class UserController {
 		GenerateCSVReport.writeUser(response.getWriter(), user);
 	}
 
+	@RequestMapping(value = "/export-user-xml-{username}", method = RequestMethod.GET)
+	public @ResponseBody AppUser getUser(@PathVariable String username) {
+		AppUser user = userService.findByUsername(username); // or set your own fields
+		// user.setId(userid);
+		// user.setUsername(username);
+		// and so on....
+	    
+		return user;
+	}
+
 	@GetMapping(value = "/alluserreportExcel")
 	public ResponseEntity<InputStreamResource> excelCustomersReport() throws IOException {
 		List<AppUser> users = (List<AppUser>) userService.findAllUsers();
@@ -225,8 +235,8 @@ public class UserController {
 	@RequestMapping("/alluserreportJSON")
 	public @ResponseBody String getusersJSON() {
 		ObjectMapper objectMapper = new ObjectMapper();
-    	//Set pretty printing of json
-    	objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+		// Set pretty printing of json
+		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 		List<AppUser> userlist = null;
 		@SuppressWarnings("unused")
 		String exception = null;
@@ -240,13 +250,13 @@ public class UserController {
 		}
 		return arrayToJson;
 	}
-	
+
 	@RequestMapping("/export-user-json-{username}")
 	public @ResponseBody String getuserJSON(@PathVariable String username, HttpServletResponse response) {
-		
+
 		ObjectMapper objectMapper = new ObjectMapper();
-    	//Set pretty printing of json
-    	objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+		// Set pretty printing of json
+		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 		@SuppressWarnings("unused")
 		String exception = null;
 		String arrayToJson = null;

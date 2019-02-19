@@ -3,7 +3,22 @@ package com.spring.boot.rocks.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "app_user", catalog = "springbootrocks", schema = "")
@@ -15,6 +30,7 @@ import javax.persistence.*;
 		@NamedQuery(name = "AppUser.findByUserfirstname", query = "SELECT a FROM AppUser a WHERE a.userfirstname = :userfirstname"),
 		@NamedQuery(name = "AppUser.findByUserlastname", query = "SELECT a FROM AppUser a WHERE a.userlastname = :userlastname"),
 		@NamedQuery(name = "AppUser.findByUseraddress", query = "SELECT a FROM AppUser a WHERE a.useraddress = :useraddress") })
+@XmlRootElement(name = "user")
 public class AppUser implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -81,7 +97,7 @@ public class AppUser implements Serializable {
 	public Long getId() {
 		return id;
 	}
-
+	@XmlElement
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -89,7 +105,7 @@ public class AppUser implements Serializable {
 	public String getUsername() {
 		return username;
 	}
-
+	@XmlElement
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -114,7 +130,7 @@ public class AppUser implements Serializable {
 	public String getUseremail() {
 		return useremail;
 	}
-
+	@XmlElement
 	public void setUseremail(String useremail) {
 		this.useremail = useremail;
 	}
@@ -122,7 +138,7 @@ public class AppUser implements Serializable {
 	public String getUserfirstname() {
 		return userfirstname;
 	}
-
+	@XmlElement
 	public void setUserfirstname(String userfirstname) {
 		this.userfirstname = userfirstname;
 	}
@@ -130,7 +146,7 @@ public class AppUser implements Serializable {
 	public String getUserlastname() {
 		return userlastname;
 	}
-
+	@XmlElement
 	public void setUserlastname(String userlastname) {
 		this.userlastname = userlastname;
 	}
@@ -138,7 +154,7 @@ public class AppUser implements Serializable {
 	public String getUseraddress() {
 		return useraddress;
 	}
-
+	@XmlElement
 	public void setUseraddress(String useraddress) {
 		this.useraddress = useraddress;
 	}

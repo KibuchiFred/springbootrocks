@@ -5,6 +5,9 @@ import com.spring.boot.rocks.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,6 +47,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@XmlElement(name = "employee")
 	public List<AppUser> findAllUsers() {
 		List<AppUser> list = new ArrayList<>();
 		userRepository.findAll().forEach(e -> list.add(e));
