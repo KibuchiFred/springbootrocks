@@ -1,6 +1,7 @@
 package com.spring.boot.rocks.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.boot.rocks.model.AppUser;
 
@@ -16,5 +17,7 @@ public interface UserService {
 	void updateUser(AppUser user);
 
 	void deleteUserByUsername(String emailid);
+	
+	public List<Map<String, Object>> jasperpdfreport();
 
 }

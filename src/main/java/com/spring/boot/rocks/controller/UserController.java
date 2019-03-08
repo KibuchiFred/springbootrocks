@@ -2,6 +2,7 @@ package com.spring.boot.rocks.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -44,6 +45,16 @@ import com.spring.boot.rocks.repository.RoleRepository;
 import com.spring.boot.rocks.service.UserService;
 import com.spring.boot.rocks.validator.UserAddValidator;
 import com.spring.boot.rocks.validator.UserEditValidator;
+
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.HtmlExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleHtmlExporterOutput;
 
 @Controller
 @RequestMapping("/")
@@ -268,6 +279,19 @@ public class UserController {
 			exception = ex.getMessage();
 		}
 		return arrayToJson;
+	}
+	
+	@RequestMapping(value = "jasper-EXPORT-report", method = RequestMethod.GET)
+	public void report(HttpServletResponse response) throws Exception {
+		response.setContentType("text/html");
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(userService.jasperpdfreport());
+		InputStream inputStream = this.getClass().getResourceAsStream("/reports/jasperreport.jrxml");
+		JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dataSource);
+		HtmlExporter exporter = new HtmlExporter(DefaultJasperReportsContext.getInstance());
+		exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+		exporter.setExporterOutput(new SimpleHtmlExporterOutput(response.getWriter()));
+		exporter.exportReport();
 	}
 
 	private String getPrincipal() {

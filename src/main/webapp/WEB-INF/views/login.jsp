@@ -1,5 +1,6 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
+<br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">

@@ -18,11 +18,11 @@
 
 
 <link rel="stylesheet"
-	href="/webjars/bootstrap/4.1.3/css/bootstrap.min.css">
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
 
-<link rel="stylesheet" href="/webjars/font-awesome/5.3.1/css/all.css">
+<link rel="stylesheet" href="/webjars/font-awesome/5.7.2/css/all.css">
 <link href="${contextPath}/resources/css/main.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
@@ -84,24 +84,24 @@
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Super Admin</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/userlist">Manage Users</a> 
-						
-						<a class="dropdown-item" href="#">More Actions</a>
+					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
+						class="dropdown-item" href="#">More Actions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">And Some More</a>
 				</div>
 			</div>
 
 
-			
+
 			<form class="form-inline mt-2 mt-md-0">
 				<input class="form-control form-control-sm mr-sm-2" type="text"
 					placeholder="Search" aria-label="Search">
 				<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
-			<a href="${contextPath}/logout" class="btn btn-warning btn-sm" 
-				role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i class="fas fa-sign-out-alt"></i>
-				Logout</a>
+			<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
+				role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i
+				class="fas fa-sign-out-alt"></i> Logout
+			</a>
 			</sec:authorize>
 		</div>
 	</nav>
@@ -148,3 +148,9 @@
 <!-- </nav> -->
 
 </head>
+
+<style>
+.error {
+	color: #ff0000;
+}
+</style>

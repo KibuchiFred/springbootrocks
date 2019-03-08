@@ -1,6 +1,6 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-
+<br><br><br>
 	<div class="container-fluid ">
 		<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
@@ -109,6 +109,13 @@
 					users to JSON</a>
 			</sec:authorize>
 		</span>
+		<span class="floatRight"> <sec:authorize
+				access="hasAuthority('ADMIN')">
+				<a href="<c:url value='/jasper-EXPORT-report'  />"
+					class="btn btn-warning btn-sm" target="_blank"> JASPER Export all
+					users</a>
+			</sec:authorize>
+		</span>
 	</div>
 
 	<!-- #Modal for removing users -->
@@ -140,11 +147,5 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
+	<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>

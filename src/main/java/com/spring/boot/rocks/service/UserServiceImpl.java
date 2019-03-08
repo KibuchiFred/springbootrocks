@@ -1,10 +1,9 @@
 package com.spring.boot.rocks.service;
 
-import com.spring.boot.rocks.model.AppUser;
-import com.spring.boot.rocks.repository.UserRepository;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -12,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.spring.boot.rocks.model.AppUser;
+import com.spring.boot.rocks.repository.UserRepository;
 
 @Service
 @Transactional(timeout = 5)
@@ -79,6 +81,22 @@ public class UserServiceImpl implements UserService {
 		System.out.println("\n%%%%%%%%%%%      Deleting User.... " + username + "     %%%%%%%%%%%%%\n");
 		userRepository.delete(findByUsername(username));
 
+	}
+	
+	@Override
+	public List<Map<String, Object>> jasperpdfreport() {
+		List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+		for (AppUser user : userRepository.findAll()) {
+			Map<String, Object> item = new HashMap<String, Object>();
+			item.put("id", user.getId());
+			item.put("username", user.getUsername());
+			item.put("useremail", user.getUseremail());
+			item.put("userfirstname", user.getUserfirstname());
+			item.put("userlastname", user.getUserlastname());
+			item.put("useraddress", user.getUseraddress());
+			result.add(item);
+		}
+		return result;
 	}
 
 }

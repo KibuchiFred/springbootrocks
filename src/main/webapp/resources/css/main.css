@@ -5,16 +5,29 @@ html {
 	min-height: 100%;
 }
 
+p.form-field-error {
+	color: red;
+/* 	font-size: 13px; */
+}
+
+input[type=text], .txtarea, select, option {
+margin-bottom: 10px;
+
+ }
+ input#customradio {
+   transform: scale(1.5);
+}
+
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 60px;
 }
 
-input[type="text"]:disabled
- {
-    color:red;
-    font-size: 24px;
- } 
+input[type="text"]:disabled {
+	color: red;
+	font-size: 24px;
+}
+
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -29,14 +42,14 @@ input[type="text"]:disabled
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 body>.container {
-	padding-top: 60px;
+	padding-top: 80px;
 	padding-left: 100px;
 	padding-right: 0;
 }
 
 body>.container-fluid {
 	padding-top: 60px;
-	padding-left: 25px;
+	padding-left: 45px;
 	padding-right: 25px;
 }
 
@@ -182,6 +195,8 @@ td {
 	color: red;
 }
 
+
+
 #sidebar .list-group-item {
 	border-radius: 0;
 	background-color: #333;
@@ -195,30 +210,44 @@ td {
 /* highlight active menu */
 #sidebar
 
+
  
+
 
 .list-group-item
 
 
+
+
 :not
 
+
  
+
 
 (
 .collapsed
 
+
  
+
 
 )
 {
 background-color
 
 
+
+
 :
+
 
  
 
+
 #222
+
+
 
 
 ;
