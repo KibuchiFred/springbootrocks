@@ -18,6 +18,6 @@ public interface UserService {
 
 	void deleteUserByUsername(String emailid);
 	
-	public List<Map<String, Object>> jasperpdfreport();
+	public List<Map<String, Object>> jasperhtmlreport();
 
 }

@@ -23,10 +23,9 @@
 	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
 
 <link rel="stylesheet" href="/webjars/font-awesome/5.7.2/css/all.css">
-<link href="${contextPath}/resources/css/main.css" rel="stylesheet">
+<link rel="stylesheet" src="css/main.css">
 <link rel="stylesheet"
 	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="/webjars/font-awesome/5.3.1/css/all.css">
 
 
 <header>

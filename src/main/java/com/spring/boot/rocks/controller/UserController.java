@@ -281,10 +281,10 @@ public class UserController {
 		return arrayToJson;
 	}
 	
-	@RequestMapping(value = "jasper-EXPORT-report", method = RequestMethod.GET)
+	@RequestMapping(value = "jasper-HTMLEXPORT-report", method = RequestMethod.GET)
 	public void report(HttpServletResponse response) throws Exception {
 		response.setContentType("text/html");
-		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(userService.jasperpdfreport());
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(userService.jasperhtmlreport());
 		InputStream inputStream = this.getClass().getResourceAsStream("/reports/jasperreport.jrxml");
 		JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, dataSource);

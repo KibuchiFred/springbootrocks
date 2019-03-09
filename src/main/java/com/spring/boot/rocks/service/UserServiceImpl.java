@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public List<Map<String, Object>> jasperpdfreport() {
+	public List<Map<String, Object>> jasperhtmlreport() {
 		List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
 		for (AppUser user : userRepository.findAll()) {
 			Map<String, Object> item = new HashMap<String, Object>();
