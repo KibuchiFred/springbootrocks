@@ -1,6 +1,5 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-<br><br><br>
 	<div class="container-fluid ">
 		<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
@@ -17,6 +16,5 @@
 	</div>
 
 	
-	<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>
 

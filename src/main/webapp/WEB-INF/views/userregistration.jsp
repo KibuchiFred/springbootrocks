@@ -1,6 +1,5 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-<br><br><br>
 	<div class="container">
 
 		<form:form method="POST" modelAttribute="userForm" class="form-signin">
@@ -134,5 +133,5 @@
 				class="fas fa-times"></i> Cancel</a>
 		</form:form>
 
-	</div><br><br><br>
+	</div>
 	<%@include file="../fragments/footer.jsp"%>

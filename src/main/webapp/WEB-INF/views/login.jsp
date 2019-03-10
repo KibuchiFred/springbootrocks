@@ -1,6 +1,5 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-<br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
@@ -58,5 +57,4 @@
 
 		<%@include file="../fragments/jumbotron.jsp"%>
 	</div>
-		<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>
