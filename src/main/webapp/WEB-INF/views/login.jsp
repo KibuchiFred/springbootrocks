@@ -58,4 +58,5 @@
 
 		<%@include file="../fragments/jumbotron.jsp"%>
 	</div>
+		<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>

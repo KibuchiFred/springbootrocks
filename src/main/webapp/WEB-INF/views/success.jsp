@@ -1,6 +1,6 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-	<br>
+		<br><br><br>
 	<div class="container">
 
 
@@ -13,4 +13,5 @@
 
 
 	</div>
+		<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>

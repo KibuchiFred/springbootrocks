@@ -1,6 +1,6 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
-
+	<br><br><br>
 	<div class="container">
 		<div class="row">
 			<div class="panel-body">
@@ -42,6 +42,6 @@
 		</div>
 	</div>
 </body>
-
+	<br><br><br>
 <%@include file="../fragments/footer.jsp"%>
 

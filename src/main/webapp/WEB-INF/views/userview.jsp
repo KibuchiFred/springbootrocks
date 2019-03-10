@@ -1,5 +1,6 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
+<br><br><br>
 	<div class="container">
 
 		<form:form method="POST" modelAttribute="userForm" class="form-signin">
@@ -99,4 +100,5 @@
 		</form:form>
 
 	</div>
+	<br><br><br>
 	<%@include file="../fragments/footer.jsp"%>
