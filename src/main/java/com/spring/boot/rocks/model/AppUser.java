@@ -16,12 +16,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import org.springframework.data.annotation.Transient;
+//import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "app_user", catalog = "springbootrocks", schema = "")
+@Table(name = "app_user")
 @NamedQueries({ @NamedQuery(name = "AppUser.findAll", query = "SELECT a FROM AppUser a"),
 		@NamedQuery(name = "AppUser.findById", query = "SELECT a FROM AppUser a WHERE a.id = :id"),
 		@NamedQuery(name = "AppUser.findByUsername", query = "SELECT a FROM AppUser a WHERE a.username = :username"),

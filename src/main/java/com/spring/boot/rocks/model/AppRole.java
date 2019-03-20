@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "app_role", catalog = "springbootrocks", schema = "")
+@Table(name = "app_role")
 @NamedQueries({ @NamedQuery(name = "AppRole.findAll", query = "SELECT a FROM AppRole a"),
 		@NamedQuery(name = "AppRole.findById", query = "SELECT a FROM AppRole a WHERE a.id = :id"),
 		@NamedQuery(name = "AppRole.findByName", query = "SELECT a FROM AppRole a WHERE a.name = :name") })

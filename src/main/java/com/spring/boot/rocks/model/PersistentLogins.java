@@ -13,7 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "persistent_logins", catalog = "springbootrocks", schema = "")
+@Table(name = "persistent_logins")
 @NamedQueries({ @NamedQuery(name = "PersistentLogins.findAll", query = "SELECT p FROM PersistentLogins p"),
 		@NamedQuery(name = "PersistentLogins.findByUsername", query = "SELECT p FROM PersistentLogins p WHERE p.username = :username"),
 		@NamedQuery(name = "PersistentLogins.findBySeries", query = "SELECT p FROM PersistentLogins p WHERE p.series = :series"),
