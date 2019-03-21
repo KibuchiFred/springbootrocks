@@ -51,14 +51,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
-				.antMatchers("/webjars/**", "/resources/**", "/resources/css/**", "/fragments/**", "/registration",
+				.antMatchers("/","/webjars/**", "/resources/**", "/resources/css/**", "/fragments/**", "/registration",
 						"/login","/userreport", "/export-user-**")
 				.permitAll().antMatchers("/delete-user-**").access("hasAuthority('ADMIN')").antMatchers("/edit-user-**")
 				.access("hasAuthority('ADMIN') or hasAuthority('EDITOR')").antMatchers("/view-user-**").permitAll()
 				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
 				.permitAll().and().rememberMe().rememberMeParameter("remember-me")
-				.tokenRepository(persistentTokenRepository).userDetailsService(userDetailsService).and().csrf()
-				.disable().exceptionHandling().accessDeniedPage("/Access_Denied");
+				.tokenRepository(persistentTokenRepository).userDetailsService(userDetailsService).and().csrf().disable().exceptionHandling().accessDeniedPage("/Access_Denied");
 	}
 
 	public void addFormatters(FormatterRegistry registry) {
