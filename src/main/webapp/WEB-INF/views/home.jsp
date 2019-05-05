@@ -11,7 +11,7 @@
 		
 
 <%-- 		img style='border:1px solid #33BEFF' src="${contextPath}/resources/casemgmt.jpg" / --%>
-		<img src="${contextPath}/resources/casemgmt.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
+		<img src="${contextPath}/resources/casemgmt.jpg" style='height: 80%; width: 100%; object-fit: contain'/>
 	</div>
 	</div>
 

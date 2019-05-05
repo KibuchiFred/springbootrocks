@@ -18,14 +18,14 @@
 
 
 <link rel="stylesheet"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
+	href="/webjars/datatables/css/jquery.dataTables.min.css">
 
-<link rel="stylesheet" href="/webjars/font-awesome/5.7.2/css/all.css">
+<link rel="stylesheet" href="/webjars/font-awesome/css/all.css">
 <link rel="stylesheet" src="css/main.css">
 <link rel="stylesheet"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css">
+	href="/webjars/datatables/css/jquery.dataTables.min.css">
 
 
 <header>
