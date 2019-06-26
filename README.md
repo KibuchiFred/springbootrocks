@@ -1,6 +1,6 @@
 # Spring Boot Rocks !!!
 
-Spring Boot 2.1.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
+Spring Boot 2.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
 
 
 For details, please visit: 
@@ -41,9 +41,9 @@ Form Validations
 UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
 
 
-# Technologies Used (as on Oct 10, 2018):
+# Technologies Used:
 
-Spring Boot - 2.1.0
+Spring Boot - 2
 
 # For UI: 
 
