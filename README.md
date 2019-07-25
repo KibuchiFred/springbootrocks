@@ -35,18 +35,3 @@ Generate QR BarCode for records from Database and list items.
 Form Validations
 
 UI using Bootstrap, Popper, Jquery, Font Awesome, Datatable
-
-
-# Technologies Used:
-
-Spring Boot - 2
-
-# For UI: 
-
-Bootstrap 4.x 
-
-Jquery 3.3.x 
-
-Fontawesome 5.x 
-
-Datatable (used for table content sorting, type-to-search and pagination)
