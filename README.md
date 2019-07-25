@@ -10,11 +10,7 @@ https://abcdjavaee.blogspot.com/2018/05/spring-boot-security-data-jpa-hibernate.
 
 # How to setup:
 
-Get a copy of community MySQL server.
-
-Run the dbscript on it.
-
-Clone the project.
+Clone the project in your favorite IDE.
 
 Run the SpringBoot App.- MyApp.java as Spring Boot App.
 
