@@ -4,11 +4,11 @@
 
 		<form:form method="POST" modelAttribute="userForm" class="form-signin">
 			<form:input type="hidden" path="id" id="id" />
-			<div class="card-header bg-info text-white p-0">
+<!-- 			<div class="card-header bg-info text-white p-0"> -->
 				<div style="text-align: center">
-					<h4>Add / Update User Account</h4>
+					<h4><b>Add / Update User Account</b></h4>
 				</div>
-			</div>
+<!-- 			</div> -->
 			<br>
 
 			<div class="row">

@@ -1,11 +1,11 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
 	<div class="container-fluid ">
-		<div class="card-header bg-info text-white p-0">
+<!-- 		<div class="card-header bg-info text-white p-0"> -->
 			<div style="text-align: center">
-				Welcome <strong>${pageContext.request.userPrincipal.name}</strong>
+				<h4><b>Welcome <strong>${pageContext.request.userPrincipal.name}</strong></b></h4>
 			</div>
-		</div>
+<!-- 		</div> -->
 		<br>
 		<div class="container">
 		

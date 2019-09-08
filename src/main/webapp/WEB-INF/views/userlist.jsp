@@ -1,11 +1,11 @@
 <%@include file="../fragments/header.jsp"%>
 <body>
 	<div class="container-fluid ">
-		<div class="card-header bg-info text-white p-0">
+<!-- 		<div class="card-header bg-info text-white p-0"> -->
 			<div style="text-align: center">
-				<h4>Manage Users</h4>
+				<h4><b>Manage Users</b></h4>
 			</div>
-		</div>
+<!-- 		</div> -->
 		<br>
 		<table id="tableitems"
 			class="table table-condensed table-hover table-responsive-sm width=100%">
@@ -87,32 +87,32 @@
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportPDF'  />"
 					class="btn btn-danger btn-sm" target="_blank"><i
-					class="fas fa-file-pdf"></i> Export all users to PDF</a>
+					class="fas fa-file-pdf"></i> Export all to PDF</a>
 			</sec:authorize>
 		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportCSV'  />"
 					class="btn btn-success btn-sm"><i class="fas fa-file-code"></i>
-					Export all users to CSV</a>
+					Export all to CSV</a>
 			</sec:authorize>
 		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportExcel'  />"
 					class="btn btn-primary btn-sm"><i class="fas fa-file-excel"></i>
-					Export all users to MS-Excel</a>
+					Export all to Excel</a>
 			</sec:authorize>
 		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/alluserreportJSON'  />"
 					class="btn btn-success btn-sm" target="_blank"> { } Export all
-					users to JSON</a>
+					to JSON</a>
 			</sec:authorize>
 		</span>
 		<span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/jasper-HTMLEXPORT-report'  />"
-					class="btn btn-warning btn-sm" target="_blank"> JASPER Export all
-					users</a>
+					class="btn btn-warning btn-sm" target="_blank"> Export all to JASPER
+					</a>
 			</sec:authorize>
 		</span>
 	</div>
