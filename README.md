@@ -12,7 +12,7 @@ https://abcdjavaee.blogspot.com/2018/05/spring-boot-security-data-jpa-hibernate.
 
 Clone the project in your favorite IDE.
 
-Run the SpringBoot App.- Application.java as Spring Boot App.
+Run Application.java as Spring Boot App.
 
 # What we will accomplish:
 
