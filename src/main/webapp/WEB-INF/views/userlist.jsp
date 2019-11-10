@@ -145,10 +145,9 @@
 						this User?</p>
 				</div>
 				<div class="modal-footer">
-					<a href="" class="btn btn-danger" id="delRef"><span
-						class="fa fa-times"> Yes Please</span></a>
+					<a href="" class="btn btn-danger" id="delRef">Yes</a>
 					<button type="button" class="btn btn-success" data-dismiss="modal">
-						<span class="fa fa-check"> No Thanks</span>
+						No
 					</button>
 
 				</div>

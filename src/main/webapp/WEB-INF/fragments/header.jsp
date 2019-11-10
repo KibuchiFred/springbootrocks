@@ -52,7 +52,6 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
 
-<header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 		<a class="navbar-brand" href="#">SPRING BOOT ROCKS</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -120,7 +119,6 @@
 			</sec:authorize>
 		</div>
 	</nav>
-</header>
 
 
 </head>
