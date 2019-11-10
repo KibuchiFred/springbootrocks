@@ -16,17 +16,41 @@
 <meta name="author" content="">
 <title>Spring Boot Rocks</title>
 
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 
 <link rel="stylesheet"
-	href="/webjars/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="/webjars/datatables/css/jquery.dataTables.min.css">
-
-<link rel="stylesheet" href="/webjars/font-awesome/css/all.css">
+	href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link
+	href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" src="css/main.css">
-<link rel="stylesheet"
-	href="/webjars/datatables/css/jquery.dataTables.min.css">
 
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script
+	src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script
+	src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
 
 <header>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -37,11 +61,10 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mr-auto">
-				<!-- 				<li class="nav-item active"><a class="nav-link" -->
-				<!-- 					href="/registration">Register</a></li> -->
-				<sec:authorize
-					access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+			<sec:authorize
+				access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
+				<ul class="navbar-nav mr-auto">
+
 					<li class="nav-item active"><a class="nav-link" href="/home">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
@@ -68,83 +91,37 @@
 								class="dropdown-item" href="#"> Last quarter</a> <a
 								class="dropdown-item" href="#"> Yearly </a>
 						</div></li>
+				</ul>
 
 
-					<!-- 					<li class="nav-item active"><a class="nav-link active" -->
-					<!-- 						href="/userlist">Manage Users</a></li> -->
-
-
-					<!--<li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>	</li> -->
-			</ul>
-
-
-			<div class="btn-group">
-				<button type="button" class="btn btn-danger dropdown-toggle btn-sm"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Super Admin</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/userlist">Manage Users</a> <a
-						class="dropdown-item" href="#">More Actions</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">And Some More</a>
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger dropdown-toggle btn-sm"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Super Admin</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/userlist">Manage Users</a> <a
+							class="dropdown-item" href="#">More Actions</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">And Some More</a>
+					</div>
 				</div>
-			</div>
 
 
 
-			<form class="form-inline mt-2 mt-md-0">
-				<input class="form-control form-control-sm mr-sm-2" type="text"
-					placeholder="Search" aria-label="Search">
-				<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
-			</form>
-			<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
-				role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i
-				class="fas fa-sign-out-alt"></i> Logout
-			</a>
+				<form class="form-inline mt-2 mt-md-0">
+					<input class="form-control form-control-sm mr-sm-2" type="text"
+						placeholder="Search" aria-label="Search">
+					<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+				<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
+					role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i
+					class="fas fa-sign-out-alt"></i> Logout
+				</a>
 			</sec:authorize>
 		</div>
 	</nav>
 </header>
 
-<!-- <nav class="col-md-100 d-none d-md-block bg-light sidebar"> -->
-<!-- 	<div class="sidebar-sticky"> -->
-<!-- 		<br> -->
-<!-- 		<h6 -->
-<!-- 			class="sidebar-heading justify-content-between align-items-center px-3 text-muted"> -->
-<!-- 			<span>Activities</span> <a -->
-<!-- 				class="d-flex align-items-center text-muted" href="#"> </a> -->
-<!-- 		</h6> -->
-<!-- 		<ul class="nav flex-column"> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					All Cases <span class="sr-only">(current)</span> -->
-<!-- 			</a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Assigned to my role </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Assigned to my group </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Search Cases </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Delegate </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Messages </a></li> -->
-<!-- 		</ul> -->
-
-<!-- 		<h6 -->
-<!-- 			class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"> -->
-<!-- 			<span>Reports</span> <a class="d-flex align-items-center text-muted" -->
-<!-- 				href="#"> </a> -->
-<!-- 		</h6> -->
-<!-- 		<ul class="nav flex-column mb-2"> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					This month </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Last quarter </a></li> -->
-<!-- 			<li class="nav-item"><a class="nav-link active" href="#"> -->
-<!-- 					Year-end report </a></li> -->
-<!-- 		</ul> -->
-<!-- 	</div> -->
-<!-- </nav> -->
 
 </head>
 
@@ -153,4 +130,6 @@
 	color: #ff0000;
 }
 </style>
-<br><br><br>
+<br>
+<br>
+<br>

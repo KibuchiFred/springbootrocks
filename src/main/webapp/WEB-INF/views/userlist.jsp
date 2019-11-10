@@ -1,16 +1,32 @@
 <%@include file="../fragments/header.jsp"%>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+
+						//for delete user
+						$('.table .delBtn').on('click', function(event) {
+							event.preventDefault();
+							var href = $(this).attr('href');
+							$('#removeModalCenter #delRef').attr('href', href);
+							$('#removeModalCenter').modal('show');
+						});
+						$('#tableitems').dataTable( {
+						        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
+						    } );
+					});
+</script>
 <body>
 	<div class="container-fluid ">
-<!-- 		<div class="card-header bg-info text-white p-0"> -->
+	<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
 				<h4><b>Manage Users</b></h4>
-			</div>
-<!-- 		</div> -->
+			</div></div>
 		<br>
 		<table id="tableitems"
 			class="table table-condensed table-hover table-responsive-sm width=100%">
 			<!-- 			<thead class="thead-light"> -->
-			<thead>
+			<thead class="thead-dark">
 				<tr>
 					<th>Id</th>
 					<th>UserID</th>
@@ -18,8 +34,6 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Address</th>
-					<!-- 					<th>Roles</th> -->
-
 					<th><sec:authorize
 							access="hasAuthority('ADMIN') or hasAuthority('DBA')">
 						</sec:authorize> <sec:authorize access="hasAuthority('ADMIN')">
@@ -36,9 +50,6 @@
 						<td>${user.userfirstname}</td>
 						<td>${user.userlastname}</td>
 						<td>${user.useraddress}</td>
-						<%-- 						<td><c:forEach items="${roles}" var="list"> --%>
-						<%-- 							-${list.name}-</c:forEach></td> --%>
-
 						<td><sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-json-${user.username}'  />"
@@ -46,19 +57,16 @@
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-pdf-${user.username}' />"
-									class="btn btn-outline-danger btn-sm" target="_blank"><i
-									class="fas fa-file-pdf"></i></a>
+									class="btn btn-outline-danger btn-sm" target="_blank"><i class="fas fa-file-pdf"></i></a>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-csv-${user.username}' />"
-									class="btn btn-outline-success btn-sm" target="_blank"><i
-									class="fas fa-file-code"></i></a>
+									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-csv"></i></a>
 							</sec:authorize>
 							<sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-xml-${user.username}' />"
-									class="btn btn-outline-warning btn-sm" target="_blank"><i
-									class="fas fa-file-code"></i></a>
+									class="btn btn-outline-warning btn-sm" target="_blank"><i class="fas fa-code"></i></a>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"

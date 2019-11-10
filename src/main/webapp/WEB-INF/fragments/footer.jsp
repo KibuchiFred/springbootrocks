@@ -1,33 +1,20 @@
 <br><br><br>
-<script src="/webjars/jquery/3.0.0/jquery.min.js/"></script>
-<script src="/webjars/popper.js/umd/popper.min.js/"></script>
-<script src="/webjars/datatables/js/jquery.dataTables.min.js/"></script>
-<script src="/webjars/bootstrap/js/bootstrap.min.js/"></script>
-<script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+<!-- <footer class="footer"> -->
+<!-- 	<!-- 				<div class="container"> --> 
+<!-- 	<div class="container-fluid"> -->
+<!-- 		<!-- 					<span>Open-source software development. --> 
+<!-- 		<!-- 			Enterprise Solutions. Spring Boot Rocks - 2018.</span> --> 
+<!-- 		<span class="text-muted">SPRING BOOT ROCKS. Open-source -->
+<!-- 			software development 2019</span> -->
+<!-- 	</div> -->
+<!-- </footer> -->
 
-						//for delete user
-						$('.table .delBtn').on('click', function(event) {
-							event.preventDefault();
-							var href = $(this).attr('href');
-							$('#removeModalCenter #delRef').attr('href', href);
-							$('#removeModalCenter').modal('show');
-						});
-						$('#tableitems').dataTable( {
-						        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
-						    } );
-					});
-</script>
-<footer class="footer">
-	<!-- 				<div class="container"> -->
-	<div class="container-fluid">
-		<!-- 					<span>Open-source software development. -->
-		<!-- 			Enterprise Solutions. Spring Boot Rocks - 2018.</span> -->
-		<span class="text-muted">SPRING BOOT ROCKS. Open-source
+
+ <footer class="footer">
+      <div class="container">
+        <span class="text-muted">SPRING BOOT ROCKS. Open-source
 			software development 2019</span>
-	</div>
-</footer>
+      </div>
+    </footer>
 </body>
 </html>
