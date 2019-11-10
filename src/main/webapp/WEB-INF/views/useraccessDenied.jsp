@@ -43,7 +43,7 @@
 								</span> <span class="floatRight"><a
 									href="<c:url value='/logout' />"
 									class="btn btn-sm btn-warning "><strong>LOGOUT</strong></a></span> <a
-									href="<c:url value='/list' />" class="btn btn-sm btn-success "><strong>Go
+									href="<c:url value='/userlist' />" class="btn btn-sm btn-success "><strong>Go
 										Back</strong></a>
 
 							</h4>

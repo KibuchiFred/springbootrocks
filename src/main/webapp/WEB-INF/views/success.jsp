@@ -33,9 +33,9 @@
 
 		<div class="alert alert-success lead">
 			${success}
-			<!--                 <span class="floatRight"> -->
-			<%-- 			<a href="<c:url value='/userlist' />"class="btn btn-primary btn-sm">Go to Users List</a> --%>
-			<!-- 		</span> -->
+			                <span class="floatRight">
+						<a href="<c:url value='/userlist' />"class="btn btn-primary btn-sm">Go to Users List</a>
+					</span>
 		</div>
 
 
