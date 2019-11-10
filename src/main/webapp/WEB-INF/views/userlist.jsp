@@ -25,7 +25,7 @@
 			</div></div>
 		<br>
 		<table id="tableitems"
-			class="table table-condensed table-hover table-responsive-sm width=100%">
+			class="table table-condensed table-hover table-responsive-sm width=80%">
 			<!-- 			<thead class="thead-light"> -->
 			<thead class="thead-dark">
 				<tr>
