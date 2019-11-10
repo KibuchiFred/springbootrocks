@@ -8,7 +8,7 @@
 		</div>
 		<br>
 		<div class="container">
-		<img src="${contextPath}/resources/casemgmt.jpg" style='height: 60%; width: 70%; object-fit: contain'/>
+		<img src="${contextPath}/resources/casemgmt.jpg" style='height: 10%; width: 80%; object-fit: contain'/>
 	</div>
 	</div>
 

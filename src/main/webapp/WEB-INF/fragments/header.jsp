@@ -103,15 +103,15 @@
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="#">And Some More</a>
 					</div>
-				</div>
+				</div> - -
 
 
 
-				<form class="form-inline mt-2 mt-md-0">
-					<input class="form-control form-control-sm mr-sm-2" type="text"
-						placeholder="Search" aria-label="Search">
-					<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
+<%-- 				<form class="form-inline mt-2 mt-md-0"> --%>
+<!-- 					<input class="form-control form-control-sm mr-sm-2" type="text" -->
+<!-- 						placeholder="Search" aria-label="Search"> -->
+<!-- 					<button class="btn  btn-sm btn-success my-2 my-sm-0" type="submit">Search</button> -->
+<%-- 				</form> --%>
 				<a href="${contextPath}/logout" class="btn btn-warning btn-sm"
 					role="button" aria-pressed="true">${pageContext.request.userPrincipal.name}&nbsp&nbsp<i
 					class="fas fa-sign-out-alt"></i> Logout
