@@ -1,33 +1,59 @@
 <%@include file="../fragments/header.jsp"%>
-<style> 
-tr {
-   line-height: 1px;
+<style>
+.table>tr, .table>th {
+	line-height: 1px;
+	height: 1px;
+	text-align: center
 }
 
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
+	.table>thead>tr>td, .table>thead>tr>th {
+	padding: 0;
+	text-align: left
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	/*background-color: #33BEFF;*/
+	background-color: #33BEFF
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	background-color: #33BEFF;
+	text-decoration: none;
+}
+
+.dropdown-menu>a:hover {
+	background-color: #33BEFF;
+	text-decoration: none;
+}
 </style>
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(
+			function() {
 
-						//for delete user
-						$('.table .delBtn').on('click', function(event) {
-							event.preventDefault();
-							var href = $(this).attr('href');
-							$('#removeModalCenter #delRef').attr('href', href);
-							$('#removeModalCenter').modal('show');
+				//for delete user
+				$('.table .delBtn').on('click', function(event) {
+					event.preventDefault();
+					var href = $(this).attr('href');
+					$('#removeModalCenter #delRef').attr('href', href);
+					$('#removeModalCenter').modal('show');
+				});
+				$('#tableitems').dataTable(
+						{
+							"lengthMenu" : [ [ 5, 10, 25, 50, 100, -1 ],
+									[ 5, 10, 25, 50, 100, "All" ] ]
 						});
-						$('#tableitems').dataTable( {
-						        "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]]
-						    } );
-					});
+			});
 </script>
 <body>
 	<div class="container-fluid ">
-	<div class="card-header bg-info text-white p-0">
+		<div class="card-header bg-info text-white p-0">
 			<div style="text-align: center">
-				<h4><b>Manage Users</b></h4>
-			</div></div>
+				<h4>
+					<b>Manage Users</b>
+				</h4>
+			</div>
+		</div>
 		<br>
 		<table id="tableitems"
 			class="table table-condensed table-hover table-responsive-sm width=80%">
@@ -63,16 +89,18 @@ tr {
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-pdf-${user.username}' />"
-									class="btn btn-outline-danger btn-sm" target="_blank"><i class="fas fa-file-pdf"></i></a>
+									class="btn btn-outline-danger btn-sm" target="_blank"><i
+									class="fas fa-file-pdf"></i></a>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-csv-${user.username}' />"
-									class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-file-csv"></i></a>
-							</sec:authorize>
-							<sec:authorize
+									class="btn btn-outline-success btn-sm" target="_blank"><i
+									class="fas fa-file-csv"></i></a>
+							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/export-user-xml-${user.username}' />"
-									class="btn btn-outline-warning btn-sm" target="_blank"><i class="fas fa-code"></i></a>
+									class="btn btn-outline-warning btn-sm" target="_blank"><i
+									class="fas fa-code"></i></a>
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
@@ -121,12 +149,11 @@ tr {
 					class="btn btn-success btn-sm" target="_blank"> { } Export all
 					to JSON</a>
 			</sec:authorize>
-		</span>
-		<span class="floatRight"> <sec:authorize
+		</span> <span class="floatRight"> <sec:authorize
 				access="hasAuthority('ADMIN')">
 				<a href="<c:url value='/jasper-HTMLEXPORT-report'  />"
-					class="btn btn-warning btn-sm" target="_blank"> Export all to JASPER
-					</a>
+					class="btn btn-warning btn-sm" target="_blank"> Export all to
+					JASPER </a>
 			</sec:authorize>
 		</span>
 	</div>
@@ -152,8 +179,7 @@ tr {
 				<div class="modal-footer">
 					<a href="" class="btn btn-danger" id="delRef">Yes</a>
 					<button type="button" class="btn btn-success" data-dismiss="modal">
-						No
-					</button>
+						No</button>
 
 				</div>
 			</div>

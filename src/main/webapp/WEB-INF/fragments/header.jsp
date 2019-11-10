@@ -51,8 +51,14 @@
 	src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
+</head>
 
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<style>
+.error {
+	color: #ff0000;
+}
+</style>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-0">
 		<a class="navbar-brand" href="#">SPRING BOOT ROCKS</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -67,7 +73,6 @@
 					<li class="nav-item active"><a class="nav-link" href="/home">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -90,6 +95,9 @@
 								class="dropdown-item" href="#"> Last quarter</a> <a
 								class="dropdown-item" href="#"> Yearly </a>
 						</div></li>
+						<li class="nav-item active"><a class="nav-link" href="/h2-console/">H2-DB-Console
+							<span class="sr-only">(current)</span>
+					</a></li>
 				</ul>
 
 
@@ -119,15 +127,6 @@
 			</sec:authorize>
 		</div>
 	</nav>
-
-
-</head>
-
-<style>
-.error {
-	color: #ff0000;
-}
-</style>
 <br>
 <br>
 <br>
