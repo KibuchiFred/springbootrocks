@@ -1,4 +1,5 @@
 <%@include file="../fragments/header.jsp"%>
+
 <script type="text/javascript">
 	$(document)
 			.ready(
