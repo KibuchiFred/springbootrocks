@@ -1,5 +1,10 @@
 <%@include file="../fragments/header.jsp"%>
+<style> 
+tr {
+   line-height: 1px;
+}
 
+</style>
 <script type="text/javascript">
 	$(document)
 			.ready(
