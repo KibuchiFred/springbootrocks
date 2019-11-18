@@ -1,17 +1,16 @@
 <%@include file="../fragments/header.jsp"%>
 <style>
-.table>tr, .table>th {
-	line-height: 1px;
-	height: 1px;
-	text-align: center
-}
+/* .table>tr, .table>th { */
+/* 	line-height: 1px; */
+/* 	height: 1px; */
+/* 	text-align: center */
+/* } */
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
-	.table>thead>tr>td, .table>thead>tr>th {
-	padding: 0;
-	text-align: left
-}
-
+/* .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, */
+/* 	.table>thead>tr>td, .table>thead>tr>th { */
+/* 	padding: 0; */
+/* 	text-align: left */
+/* } */
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
 	/*background-color: #33BEFF;*/
 	background-color: #33BEFF
@@ -40,21 +39,26 @@
 				});
 				$('#tableitems').dataTable(
 						{
-							"lengthMenu" : [ [ 5, 10, 25, 50, 100, -1 ],
-									[ 5, 10, 25, 50, 100, "All" ] ]
+							"lengthMenu" : [ [ 7, 10, 25, 50, 100, -1 ],
+									[ 7, 10, 25, 50, 100, "All" ] ]
 						});
+// 				$('#tableitems').dataTable(
+// 						{
+// 							"lengthMenu" : [ [ 5, 10, 25, 50, 100, -1 ],
+// 									[ 5, 10, 25, 50, 100, "All" ] ]
+// 						});
 			});
 </script>
+</head>
 <body>
 	<div class="container-fluid ">
-		<div class="card-header bg-info text-white p-0">
-			<div style="text-align: center">
-				<h4>
-					<b>Manage Users</b>
-				</h4>
-			</div>
+		<!-- 		<div class="card-header bg-info text-white p-0"> -->
+		<div style="text-align: center">
+			<h4>
+				<b>Manage Users</b>
+			</h4>
 		</div>
-		<br>
+		<!-- 		</div> -->
 		<table id="tableitems"
 			class="table table-condensed table-hover table-responsive-sm width=80%">
 			<!-- 			<thead class="thead-light"> -->
@@ -186,3 +190,5 @@
 		</div>
 	</div>
 	<%@include file="../fragments/footer.jsp"%>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <div class="jumbotron">
 	<!--  <h2 class="display-17">Spring Boot Rocks..!!</h2> -->
 	<h4 class="display-17">Open-Source Software (OSS) -</h4>
@@ -12,4 +11,3 @@
 		role="button" target="_blank">Read more about OSS at Source:
 		Wikipedia &raquo;</a>
 </div>
-

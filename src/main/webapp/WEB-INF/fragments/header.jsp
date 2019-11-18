@@ -51,11 +51,29 @@
 	src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
-</head>
-
 <style>
 .error {
 	color: #ff0000;
+}
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 20px; */
+	line-height: 20px;
+	background-color: #f5f5f5;
+}
+.btn-super-large {
+	width: 200px;
+	height: 200px;
+}
+.logo-icon {
+	transform: scale(10.0, 10.0);
+	-ms-transform: scale(10.0, 10.0); /* IE 9 */
+	-moz-transform: scale(10.0, 10.0); /* Firefox */
+	-webkit-transform: scale(10.0, 10.0); /* Safari and Chrome */
+	-o-transform: scale(10.0, 10.0); /* Opera */
 }
 </style>
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-0">
@@ -127,6 +145,8 @@
 			</sec:authorize>
 		</div>
 	</nav>
-<br>
-<br>
-<br>
+	
+	<hr/><hr/>
+	
+	
+	

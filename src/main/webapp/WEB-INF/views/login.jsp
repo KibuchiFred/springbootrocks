@@ -1,43 +1,16 @@
 <%@include file="../fragments/header.jsp"%>
-<style>
-.table>tr, .table>th {
-	line-height: 1px;
-	height: 1px;
-	text-align: center
-}
-
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
-	.table>thead>tr>td, .table>thead>tr>th {
-	padding: 0;
-	text-align: left
-}
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-	/*background-color: #33BEFF;*/
-	background-color: #33BEFF
-}
-
-.nav>li>a:hover, .nav>li>a:focus {
-	background-color: #33BEFF;
-	text-decoration: none;
-}
-
-.dropdown-menu>a:hover {
-	background-color: #33BEFF;
-	text-decoration: none;
-}
-</style>
+</head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-7">
 				<form:form method="POST" action="${contextPath}/login"
 					class="form-signin">
-					<div style="text-align: left"
-						class="card-header bg-default text-primary  p-0">
-						<!-- 				<div style="text-align: center"><h1>Login</h1></div> -->
-						<h2>Login</h2>
-					</div>
+					<!-- 					<div style="text-align: left" -->
+					<!-- 						class="card-header bg-default text-primary  p-0"> -->
+					<!-- 				<div style="text-align: center"><h1>Login</h1></div> -->
+					<h2>Login</h2>
+					<!-- 					</div> -->
 					<c:if test="${param.error != null}">
 						<div class="alert alert-danger">Invalid username and
 							password.</div>
@@ -83,6 +56,8 @@
 			</div>
 		</div>
 
-		<%@include file="../fragments/jumbotron.jsp"%>
 	</div>
+	<%@include file="../fragments/jumbotron.jsp"%>
 	<%@include file="../fragments/footer.jsp"%>
+</body>
+</html>

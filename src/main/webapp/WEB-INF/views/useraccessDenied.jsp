@@ -27,6 +27,7 @@
 	text-decoration: none;
 }
 </style>
+</head>
 <body>
 	<div class="container">
 		<div class="row">
@@ -43,8 +44,8 @@
 								</span> <span class="floatRight"><a
 									href="<c:url value='/logout' />"
 									class="btn btn-sm btn-warning "><strong>LOGOUT</strong></a></span> <a
-									href="<c:url value='/userlist' />" class="btn btn-sm btn-success "><strong>Go
-										Back</strong></a>
+									href="<c:url value='/userlist' />"
+									class="btn btn-sm btn-success "><strong>Go Back</strong></a>
 
 							</h4>
 						</div>
@@ -68,6 +69,6 @@
 			</div>
 		</div>
 	</div>
+	<%@include file="../fragments/footer.jsp"%>
 </body>
-<%@include file="../fragments/footer.jsp"%>
-
+</html>
