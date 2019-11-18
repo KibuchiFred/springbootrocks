@@ -26,29 +26,7 @@
 	text-decoration: none;
 }
 </style>
-<script type="text/javascript">
-	$(document).ready(
-			function() {
 
-				//for delete user
-				$('.table .delBtn').on('click', function(event) {
-					event.preventDefault();
-					var href = $(this).attr('href');
-					$('#removeModalCenter #delRef').attr('href', href);
-					$('#removeModalCenter').modal('show');
-				});
-				$('#tableitems').dataTable(
-						{
-							"lengthMenu" : [ [ 7, 10, 25, 50, 100, -1 ],
-									[ 7, 10, 25, 50, 100, "All" ] ]
-						});
-// 				$('#tableitems').dataTable(
-// 						{
-// 							"lengthMenu" : [ [ 5, 10, 25, 50, 100, -1 ],
-// 									[ 5, 10, 25, 50, 100, "All" ] ]
-// 						});
-			});
-</script>
 </head>
 <body>
 	<div class="container-fluid ">
@@ -108,7 +86,8 @@
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR') or hasAuthority('VIEWER')">
 								<a href="<c:url value='/view-user-${user.username}' />"
-									class="btn btn-outline-info btn-sm"><i class="fas fa-user"></i></a>
+									class="btn btn-outline-info btn-sm viewBtn"><i
+									class="fas fa-user"></i></a>
 
 							</sec:authorize> <sec:authorize
 								access="hasAuthority('ADMIN') or hasAuthority('EDITOR')">
@@ -189,6 +168,32 @@
 			</div>
 		</div>
 	</div>
+
 	<%@include file="../fragments/footer.jsp"%>
+
+	<script type="text/javascript">
+	$(document).ready(
+			function() {
+
+				//for delete user
+				$('.table .delBtn').on('click', function(event) {
+					event.preventDefault();
+					var href = $(this).attr('href');
+					$('#removeModalCenter #delRef').attr('href', href);
+					$('#removeModalCenter').modal('show');
+				});
+
+				$('#tableitems').dataTable(
+						{
+							"lengthMenu" : [ [ 7, 10, 25, 50, 100, -1 ],
+									[ 7, 10, 25, 50, 100, "All" ] ]
+						});
+// 				$('#tableitems').dataTable(
+// 						{
+// 							"lengthMenu" : [ [ 5, 10, 25, 50, 100, -1 ],
+// 									[ 5, 10, 25, 50, 100, "All" ] ]
+// 						});
+			});
+</script>
 </body>
 </html>

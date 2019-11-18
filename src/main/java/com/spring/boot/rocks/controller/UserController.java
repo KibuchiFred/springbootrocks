@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.TimeZone;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +43,7 @@ import com.spring.boot.rocks.model.GenerateCSVReport;
 import com.spring.boot.rocks.model.GenerateExcelReport;
 import com.spring.boot.rocks.model.GeneratePdfReport;
 import com.spring.boot.rocks.repository.RoleRepository;
+import com.spring.boot.rocks.repository.UserRepository;
 import com.spring.boot.rocks.service.UserService;
 import com.spring.boot.rocks.validator.UserAddValidator;
 import com.spring.boot.rocks.validator.UserEditValidator;
@@ -67,6 +69,10 @@ public class UserController {
 	private RoleRepository roleRepo;
 
 	@Autowired
+	private UserRepository userRepo;
+	
+	
+	@Autowired
 	private UserAddValidator useraddValidator;
 
 	@Autowired
@@ -76,6 +82,7 @@ public class UserController {
 	public String root(Model model) {
 		return "redirect:userlist";
 	}
+	
 
 	@RequestMapping(value = { "home" }, method = RequestMethod.GET)
 	public String home(Model model) {

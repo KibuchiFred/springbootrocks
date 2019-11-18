@@ -55,9 +55,9 @@
 				</form:form>
 			</div>
 		</div>
-
+		<%@include file="../fragments/jumbotron.jsp"%>
 	</div>
-	<%@include file="../fragments/jumbotron.jsp"%>
+
 	<%@include file="../fragments/footer.jsp"%>
 </body>
 </html>
