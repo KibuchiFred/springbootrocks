@@ -22,7 +22,7 @@
 					<div class="form-group">
 						<div class="form-group ${error != null ? 'has-error' : ''}">
 							<div class="form-group">
-								<i class="fa fa-users"></i><input name="username" type="text"
+								<i class="fa fa-user"></i><input name="username" type="text"
 									class="form-control" placeholder="Username"
 									autofocus="autofocus" />
 							</div>

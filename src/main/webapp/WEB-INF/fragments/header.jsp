@@ -68,6 +68,10 @@
 	width: 200px;
 	height: 200px;
 }
+.jumbotron {
+padding-top: 0;
+ padding-bottom: 0;
+ }
 .logo-icon {
 	transform: scale(10.0, 10.0);
 	-ms-transform: scale(10.0, 10.0); /* IE 9 */

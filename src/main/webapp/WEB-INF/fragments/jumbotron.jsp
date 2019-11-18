@@ -1,4 +1,5 @@
-<div class="jumbotron">
+<!-- <div class="col-md-6"> -->
+<div class="jumbotron col-md-10">
 	<!--  <h2 class="display-17">Spring Boot Rocks..!!</h2> -->
 	<h4 class="display-17">Open-Source Software (OSS) -</h4>
 	Is a type of computer software with its source code made available with
@@ -11,3 +12,4 @@
 		role="button" target="_blank">Read more about OSS at Source:
 		Wikipedia &raquo;</a>
 </div>
+<!-- </div> -->
