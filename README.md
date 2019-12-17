@@ -1,3 +1,17 @@
+# Spring Boot Rocks - Version 2 Coming soon with following updates:
+
+Multiple versions of CRUD operation
+  - Spring Data with Datatable
+  - Spring Data with server side Pagination with Datatable override options
+  - Spring JDBC Template with Datatable
+  - Spring Data AJAX (dynamic) html table
+
+Refined and polished and tight UI
+
+Latest SpringBoot Version
+
+Some extra bells and whistles
+
 # Spring Boot Rocks !!!
 
 Spring Boot 2.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
