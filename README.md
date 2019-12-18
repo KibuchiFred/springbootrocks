@@ -1,10 +1,11 @@
-# Spring Boot Rocks - Version 2 Coming soon with following updates:
+# Spring Boot Rocks - Version 2 is here https://github.com/ajkr195/springbootrocks_v2
+ with:
 
 Multiple versions of CRUD operation
   - Spring Data with Datatable
   - Spring Data with server side Pagination with Datatable override options
   - Spring JDBC Template with Datatable
-  - Spring Data AJAX (dynamic) html table
+  - Spring Data AJAX (dynamic) html table - In progress
 
 Refined and polished and tight UI
 
@@ -13,16 +14,10 @@ Latest SpringBoot Version
 Some extra bells and whistles
 
 
-# Check it out here - https://github.com/ajkr195/springbootrocks_v2
 
-
-
+# Spring Boot Rocks - v1
 
 Spring Boot 2.x Security Hibernate MySQL Boostrap Jquery FontAwesome Datatable
-
-
-
-# Spring Boot Rocks
 
 For details, please visit: 
 
